@@ -1,4 +1,4 @@
-game sui-template
-name "Sui Template"
-basegame sui-template
+game Game
+name "GMTK Jam 19"
+basegame game
 disablehomedir 1
