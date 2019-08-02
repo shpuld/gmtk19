@@ -131,7 +131,7 @@ void() SV_RunClientCommand =
 		if (!input_buttons)
 		{
 			makevectors(input_angles + '-5 0 0');
-			self.velocity += v_forward * self.jump_hold * 500;
+			self.velocity += v_forward * (400 + self.jump_hold * 500);
 			self.jump_hold = 0;
 		}
 	}
