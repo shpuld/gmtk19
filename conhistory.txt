@@ -4,3 +4,4 @@
 vid_restart
 /map testgolfleon
 /map testgolfleon
+/map testgolfleon
