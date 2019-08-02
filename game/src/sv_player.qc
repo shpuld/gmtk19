@@ -38,9 +38,9 @@ void() PlayerPreThink =
 	CheckImpulses();
 	makevectors(self.v_angle);
 	vector to_move_entity = self.move_entity.origin - self.origin;
-	if (vlen(to_move_entity) > 1)
+	if (vlen(to_move_entity) > 0)
 	{
-		self.origin += to_move_entity * 0.05;
+		self.origin += to_move_entity * 0.04;
 	}
 	if(self.button0)
 	{
@@ -79,7 +79,7 @@ void() PlayerSpawn =
 	self.health = 100;
 	setorigin(self, get_spawn_point());
 	self.fixangle = TRUE;
-	setsize(self, [-16, -16, 0], [16, 16, 56]);
+	setsize(self, [-16, -16, 0], [16, 16, 32]);
 	self.view_ofs = [0, 0, 24];
 	
 	self.move_entity = spawn();
@@ -144,7 +144,7 @@ void() SV_RunClientCommand =
 		if (!input_buttons)
 		{
 			makevectors(input_angles + '-5 0 0');
-			self.move_entity.velocity += v_forward * (400 + self.jump_hold * 500);
+			self.move_entity.velocity += v_forward * (400 + self.jump_hold * 700);
 			self.jump_hold = 0;
 		}
 	}
