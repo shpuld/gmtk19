@@ -33,11 +33,24 @@ vector() get_spawn_point =
 	return spawnpoint.origin + '0 0 1';
 };
 
+.vector velocity_stuck_array[4];
+.float velocity_stuck_index;
 void() PlayerPreThink =
 {	
 	CheckImpulses();
 	makevectors(self.v_angle);
 	vector to_move_entity = self.move_entity.origin - self.origin;
+	self.velocity_stuck_array[self.velocity_stuck_index] = self.move_entity.velocity;
+	self.velocity_stuck_index += 1;
+	if (self.velocity_stuck_index >= 4) self.velocity_stuck_index = 0;
+	float all_same = TRUE;
+	for (int i = 0; i < 4; i++)
+	{
+		if (self.velocity_stuck_array[i] != self.velocity_stuck_array[0])
+			all_same = FALSE;
+	}
+	if (all_same) self.move_entity.velocity = '0 0 0';
+	
 	if (vlen(to_move_entity) > 0)
 	{
 		self.origin += to_move_entity * 0.04;
@@ -137,13 +150,15 @@ void() SV_RunClientCommand =
 	input_movevalues = '0 0 0';
 	input_buttons -= input_buttons & 2;
 	float speed = vlen(self.move_entity.velocity);
-	printf("speed %f\n", speed);
+	printf("speed %v\n", self.move_entity.velocity);
 	if (self.jump_hold)
 	{
 		printf("jump: %f\n", self.jump_hold);
 		if (!input_buttons)
 		{
 			makevectors(input_angles + '-5 0 0');
+			tracebox(self.move_entity.origin, self.move_entity.mins, self.move_entity.maxs, self.move_entity.origin + '0 0 16', 0, self.move_entity);
+			setorigin(self.move_entity, trace_endpos);
 			self.move_entity.velocity += v_forward * (400 + self.jump_hold * 700);
 			self.jump_hold = 0;
 		}
