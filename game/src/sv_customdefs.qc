@@ -1,5 +1,7 @@
 // put custom server-only globals and fields here
 
+.entity move_entity;
+
 const float FL_JUMPRELEASED = 4096;
 
 void() sub_remove =
