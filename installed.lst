@@ -1,0 +1,5 @@
+version 2
+set updatemode "1"
+set declined ""
+sublist "https://updates.triptohell.info/downloadables.php" ""
+"FTE QuakeWorld - 2016-07-17" ver=5005 gamedir= file=fteminglqw_5005_32.exe

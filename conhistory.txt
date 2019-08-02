@@ -1,1 +1,4 @@
 /disconnect 
+/vid_fullscreen 
+/vid_fullscreen 0
+vid_restart

@@ -119,9 +119,27 @@ void(string command_string) SV_ParseClientCommand =
 	clientcommand(self, command_string);
 };
 
-
+.float jump_hold;
 void() SV_RunClientCommand =
 {
+	input_movevalues = '0 0 0';
+	input_buttons -= input_buttons & 2;
+	float speed = vlen(self.velocity);
+	if (self.jump_hold)
+	{
+		printf("jump: %f\n", self.jump_hold);
+		if (!input_buttons)
+		{
+			makevectors(input_angles + '-5 0 0');
+			self.velocity += v_forward * self.jump_hold * 500;
+			self.jump_hold = 0;
+		}
+	}
+	if (input_buttons && self.flags & FL_ONGROUND && speed <= 5)
+	{
+		self.jump_hold += input_timelength;
+		// 
+	}
 	runstandardplayerphysics(self);
 };
 
