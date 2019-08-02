@@ -37,6 +37,11 @@ void() PlayerPreThink =
 {	
 	CheckImpulses();
 	makevectors(self.v_angle);
+	vector to_move_entity = self.move_entity.origin - self.origin;
+	if (vlen(to_move_entity) > 1)
+	{
+		self.origin += to_move_entity * 0.05;
+	}
 	if(self.button0)
 	{
 		
@@ -68,14 +73,21 @@ void() ClientConnect =
 void() PlayerSpawn =
 {
 	self.classname = "player";
-	self.solid = SOLID_SLIDEBOX;
+	self.solid = SOLID_NOT;
 	setmodel(self, "models/testplayer.iqm");
-	self.movetype = MOVETYPE_WALK;
+	self.movetype = MOVETYPE_FLY;
 	self.health = 100;
 	setorigin(self, get_spawn_point());
 	self.fixangle = TRUE;
 	setsize(self, [-16, -16, 0], [16, 16, 56]);
-	self.view_ofs = [0, 0, 48];
+	self.view_ofs = [0, 0, 24];
+	
+	self.move_entity = spawn();
+	self.move_entity.solid = SOLID_SLIDEBOX;
+	self.move_entity.movetype = MOVETYPE_BOUNCE;
+	self.move_entity.origin = self.origin + '0 0 64';
+	setmodel(self.move_entity, "models/testplayer.iqm");
+	setsize(self.move_entity, self.mins, self.maxs);
 };
 
 void() PutClientInServer =
@@ -124,18 +136,19 @@ void() SV_RunClientCommand =
 {
 	input_movevalues = '0 0 0';
 	input_buttons -= input_buttons & 2;
-	float speed = vlen(self.velocity);
+	float speed = vlen(self.move_entity.velocity);
+	printf("speed %f\n", speed);
 	if (self.jump_hold)
 	{
 		printf("jump: %f\n", self.jump_hold);
 		if (!input_buttons)
 		{
 			makevectors(input_angles + '-5 0 0');
-			self.velocity += v_forward * (400 + self.jump_hold * 500);
+			self.move_entity.velocity += v_forward * (400 + self.jump_hold * 500);
 			self.jump_hold = 0;
 		}
 	}
-	if (input_buttons && self.flags & FL_ONGROUND && speed <= 5)
+	if (input_buttons && speed <= 5)
 	{
 		self.jump_hold += input_timelength;
 		// 
