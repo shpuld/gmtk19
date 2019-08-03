@@ -25,6 +25,7 @@ void() precache_everything =
 	precache_sound("sounds/splatbig1.wav");
 	precache_sound("sounds/splatbig2.wav");
 	precache_sound("sounds/blobjump.wav");
+	precache_sound("sounds/diamondpickup2.wav");
 };
 
 
@@ -62,7 +63,7 @@ void(entity pl, float length) custom_physics =
 	setorigin(pl, trace_endpos);
 	if (trace_fraction < 1)
 	{
-		if (vlen(pl.velocity) > 300)
+		if (vlen(pl.velocity) > 200)
 		{
 			handlebounce(vlen(pl.velocity));
 		}

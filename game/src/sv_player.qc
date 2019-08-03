@@ -168,7 +168,7 @@ void(string command_string) SV_ParseClientCommand =
 
 void(float speed) handlebounce =
 {
-	float vol = min(1, (speed - 300 * 0.01) + 0.1);
+	float vol = min(1, ((speed - 200) * 0.001));
 	sound(world, CHAN_AUTO, "sounds/splatbig1.wav", vol, 0, 100);
 };
 
@@ -192,8 +192,8 @@ void() SV_RunClientCommand =
 			// tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
 			// setorigin(self, trace_endpos);
 			self.velocity = v_forward * (250 + self.jump_hold * 1800);
+			sound(self, CHAN_AUTO, "sounds/blobjump.wav", 0.5 + (self.jump_hold * 0.5), 0, 110 - (self.jump_hold * 25));
 			self.jump_hold = 0;
-			sound(self, CHAN_AUTO, "sounds/blobjump.wav", 1, 0, 100);
 		}
 	}
 	if (input_buttons && self.can_jump)

@@ -100,6 +100,7 @@ void() diamond_touch =
 	self.active_jump = other.active_jump;
 	pointparticles(particleeffectnum("weapons.diamond_pickup"), self.origin, '0 0 1', 1);
 	self.modelindex = 0;
+	sound(other, CHAN_ITEM, "sounds/diamondpickup2.wav", 0.5, 0, 100 + random() * 4);
 	diamonds += 1;
 };
 

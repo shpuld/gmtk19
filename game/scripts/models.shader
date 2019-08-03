@@ -41,6 +41,16 @@ testblob
 	}
 }
 
+testblob_alpha
+{
+	{
+		map models/testblob
+		blendFunc blend
+		alphaGen entity
+	}
+}
+
+
 blobshadow
 {
 	polygonOffset 1
@@ -56,6 +66,7 @@ blobshadow
 
 trajectorydot
 {
+	sort nearest
 	{
 		map $whiteimage
 		blendFunc GL_SRC_ALPHA GL_ONE

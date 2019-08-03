@@ -93,10 +93,12 @@ float(float isnew) player_listen =
 			self.origin += [sin(time*40) + cos(time*100), sin(time*90) + cos(time*110), sin(time*105) + cos(time*90)] * max(0, power - 0.65);
 		}
 	}
+	self.forceshader = shaderforname("testblob");
 	if (vlen(self.origin - campos) < 80)
 	{
 		float dist = vlen(self.origin - campos);
 		self.alpha = 1 * (dist/80);
+		self.forceshader = shaderforname("testblob_alpha");
 	}
 	makevectors(self.angles);
 	vector newdir = v_forward;
