@@ -32,6 +32,7 @@ void() bricks_touch =
 	if (other.classname != "player") return;
 	if (vlen(other.velocity) > 600)
 	{
+		pointparticles(particleeffectnum("weapons.bricks"), (self.absmin + self.absmax)/2, '0 0 1', 1);
 		self.think = sub_remove;
 		self.nextthink = time;
 	}

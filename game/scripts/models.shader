@@ -63,3 +63,13 @@ trajectorydot
 		alphaGen entity
 	}
 }
+
+brickpart
+{
+	{
+		map particles/brick
+		alphaFunc GE128
+		rgbGen vertex
+		alphaGen vertex
+	}
+}

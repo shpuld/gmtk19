@@ -15,6 +15,7 @@ void() precache_everything =
 	precache_model("models/arrow_fill.iqm");
 	precache_model("models/trajectory_dot.iqm");
 	particleeffectnum("weapons.blob_die");
+	particleeffectnum("weapons.bricks");
 };
 
 

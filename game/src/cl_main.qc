@@ -39,10 +39,10 @@ void() draw_trajectory =
 		self.trajectorydot.alpha = 1 - (i / 40);
 		self.trajectorydot.colormod = '0 1 0' * (0.8-power) + '1.2 0.1 0' * power; 
 		
-		if ((float)i%2)
+		if ((float)i%3 == 0)
 		{
 			oldorg = self.trajectorydot.origin;
-			self.trajectorydot.origin += self.trajectorydot.velocity * (time*0.03 % 0.025);
+			self.trajectorydot.origin += self.trajectorydot.velocity * (time*0.03 % 0.0125*3);
 			addentity(self.trajectorydot);
 			self.trajectorydot.origin = oldorg;
 		}
