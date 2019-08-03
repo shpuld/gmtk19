@@ -277,8 +277,8 @@ textures/dev/test_sky
 	qer_editorimage textures/dev/edsky.tga
 
 	q3map_globaltexture
-	q3map_skylight 270 3
-	q3map_sun 0.9 0.8 0.7 120 60 45
+	q3map_skylight 110 3
+	q3map_sun 0.9 0.8 0.7 50 60 45
 	
 	surfaceparm sky
 	surfaceparm noimpact
