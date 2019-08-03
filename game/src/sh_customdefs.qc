@@ -10,4 +10,38 @@ void() precache_everything =
 	precache_sound("demon/dland2.wav");
 	precache_model("models/testblob.iqm");
 	precache_model("models/arrow_fill.iqm");
+	precache_model("models/trajectory_dot.iqm");
+};
+
+
+vector(vector to, vector vec) vector_project =
+{
+	float to_len = vlen(to);
+	return ((to * vec)/(to_len * to_len)) * to;
+};
+
+vector(vector v, vector n) vector_bounce =
+{
+	// n = normalize(n);
+	return v - (v * n) * n * 1.5;
+};
+
+void(entity pl, float length) custom_physics = 
+{
+	vector start = pl.origin;
+	vector end = pl.origin + pl.velocity * length;
+	tracebox(start, pl.mins, pl.maxs, end, 0, pl);
+	if (trace_fraction == 1)
+		pl.velocity -= '0 0 1' * cvar("sv_gravity") * length;
+	tracebox(start, pl.mins, pl.maxs, end, 0, pl);
+	setorigin(pl, trace_endpos);
+	if (trace_fraction < 1)
+	{
+		pl.velocity = vector_bounce(pl.velocity, trace_plane_normal);
+		pl.velocity *= 0.8;
+		if (trace_plane_normal_z > 0.6 && vlen(pl.velocity) < 30*60*length)
+		{
+			pl.velocity = '0 0 0';
+		}
+	}
 };

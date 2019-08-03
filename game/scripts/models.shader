@@ -53,3 +53,13 @@ blobshadow
 		alphaGen vertex	
 	}
 }
+
+trajectorydot
+{
+	{
+		map $whiteimage
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen entity
+		alphaGen entity
+	}
+}

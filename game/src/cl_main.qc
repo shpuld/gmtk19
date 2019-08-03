@@ -11,6 +11,34 @@ void() CSQC_Shutdown =
 .float last_yaw;
 .float framelerp;
 .vector aimdir;
+.entity trajectorydot;
+
+void() draw_trajectory =
+{
+	float power = getstatf(STAT_POWER);
+	if (!self.trajectorydot)
+	{
+		self.trajectorydot = spawn();
+		setmodel(self.trajectorydot, "models/trajectory_dot.iqm");
+		setsize(self.trajectorydot, '-16 -16 -16', '16 16 16');
+		self.trajectorydot.solid = SOLID_NOT;
+		self.trajectorydot.movetype = MOVETYPE_WALK;
+	}
+	tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
+	self.trajectorydot.origin = trace_endpos;
+	self.trajectorydot.angles = camang;
+	makevectors(camang);
+	self.trajectorydot.velocity = v_forward * (250 + power * 1800);
+	for (int i = 0; i < 20; i++)
+	{
+		custom_physics(self.trajectorydot, 0.05);
+		self.trajectorydot.angles = vectoangles(self.trajectorydot.velocity);
+		self.trajectorydot.alpha = 1 - (i / 20);
+		self.trajectorydot.colormod = '0 1 0' * (0.8-power) + '1.2 0.1 0' * power; 
+		addentity(self.trajectorydot);
+	}
+};
+
 float(float isnew) player_listen =
 {
 	if (self.entnum == player_localentnum) localplayer = self;
@@ -44,6 +72,7 @@ float(float isnew) player_listen =
 		{
 			self.frame1time = power;
 			self.angles_y = camang_y;
+			draw_trajectory();
 			self.origin += [sin(time*40) + cos(time*100), sin(time*90) + cos(time*110), sin(time*105) + cos(time*90)] * max(0, power - 0.65);
 		}
 	}
@@ -123,15 +152,15 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 		vector rgt = 16 * v_right;
 		vector fwd = 128 * v_forward;
 		vector org = localplayer.origin + '0 0 16';
-		float frc = jump_power / 0.8;
-		
+		// float frc = jump_power / 0.8;
+		/*
 		R_BeginPolygon("arrow_fill2", 0, 0);
 		R_PolygonVertex(org - rgt, [0, 1], '1 1 1', frc);
 		R_PolygonVertex(org - rgt + fwd * frc, [0, 1 - frc], '1 1 1', frc);
 		R_PolygonVertex(org + rgt + fwd * frc, [1, 1 - frc], '1 1 1', frc);
 		R_PolygonVertex(org + rgt, [1, 1], '1 1 1', frc);
 		R_EndPolygon();
-		
+		*/
 		
 		R_BeginPolygon("arrow_outline", 0, 0);
 		R_PolygonVertex(org - rgt, [0, 1], '1 1 1', 1);
