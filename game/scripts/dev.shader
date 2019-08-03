@@ -2,9 +2,8 @@ textures/dev/window
 {
 	qer_alphaFunc gequal 0.5
 	trans
-	surfaceparm detail
-	surfaceparm lightfilter
 	surfaceparm alphashadow
+	surfaceparm detail
 	{
 		map $nearest:textures/dev/window.tga
 		alphaGen 0.1

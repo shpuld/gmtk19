@@ -232,6 +232,12 @@ void() CSQC_Parse_Event =
 		case EV_REVIVE:
 			is_dead = FALSE;
 			break;
+		case EV_GOAL:
+			if (getstatf(STAT_DIAMONDS) < getstatf(STAT_DIAMONDS_TOTAL))
+			{
+				
+			}
+			break;
 		default:
 			printf("No action for byte %f\n", first);
 			break;

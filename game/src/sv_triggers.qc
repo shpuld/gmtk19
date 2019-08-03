@@ -57,7 +57,6 @@ void() func_bricks =
 	self.solid = SOLID_BSP;
 	self.touch = bricks_touch;
 	self.real_modelindex = self.modelindex;
-	printf("self.modelindex %f\n", self.modelindex);
 };
 
 void() death_touch =
@@ -69,14 +68,16 @@ void() death_touch =
 
 void() trigger_death =
 {
-	print("trigger death in map\n");
 	trigger_base();
 	self.touch = death_touch;
 };
 
 void() goal_touch =
 {
-	printf("someone %s reached goal\n", etos(other));
+	if (other.classname != "player") return;
+	msg_entity = other;
+	BeginEvent(EV_GOAL);
+	multicast('0 0 0', MULTICAST_ONE_R);
 };
 
 void() trigger_goal =
@@ -100,7 +101,6 @@ void() diamond_touch =
 	pointparticles(particleeffectnum("weapons.diamond_pickup"), self.origin, '0 0 1', 1);
 	self.modelindex = 0;
 	diamonds += 1;
-	printf("killed %f\n", diamonds);
 };
 
 void() item_health =

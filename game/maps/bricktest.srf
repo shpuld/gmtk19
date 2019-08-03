@@ -42,239 +42,329 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-6 // SURFACE_META V: 4 I: 6 planar
+6 // SURFACE_META V: 5 I: 9 planar
 {
-	shader textures/dev/bricks
-	entity 2
-	castShadows 0
+	shader textures/dev/graydark
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-7 // SURFACE_META V: 4 I: 6 planar
+7 // SURFACE_META V: 8 I: 18 planar
 {
-	shader textures/dev/bricks
-	entity 2
-	castShadows 0
+	shader textures/dev/graydark
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-8 // SURFACE_META V: 4 I: 6 planar
+8 // SURFACE_META V: 10 I: 24 planar
 {
-	shader textures/dev/bricks
-	entity 2
-	castShadows 0
+	shader textures/dev/graydark
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-9 // SURFACE_META V: 4 I: 6 planar
+9 // SURFACE_META V: 6 I: 12 planar
 {
-	shader textures/dev/bricks
-	entity 2
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	shader textures/dev/graydark
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-10 // SURFACE_META V: 4 I: 6 planar
+10 // SURFACE_META V: 14 I: 36 planar
 {
-	shader textures/dev/bricks
-	entity 2
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	shader textures/dev/graydark
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 11 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/bricks
-	entity 2
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/dev/graydark
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-12 // SURFACE_META V: 4 I: 6 planar
+12 // SURFACE_META V: 6 I: 12 planar
 {
-	shader textures/dev/bricks
-	entity 3
-	castShadows 0
+	shader textures/dev/graydark
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-13 // SURFACE_META V: 4 I: 6 planar
+13 // SURFACE_META V: 5 I: 9 planar
 {
-	shader textures/dev/bricks
-	entity 3
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	shader textures/dev/graydark
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 14 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/bricks
-	entity 3
-	castShadows 0
+	shader textures/dev/window
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+15 // SURFACE_META V: 9 I: 18 planar
+{
+	shader textures/dev/window
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-15 // SURFACE_META V: 4 I: 6 planar
+16 // SURFACE_META V: 6 I: 12 planar
 {
-	shader textures/dev/bricks
-	entity 3
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-16 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 3
-	castShadows 0
+	shader textures/dev/window
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
 17 // SURFACE_META V: 4 I: 6 planar
 {
+	shader textures/dev/window
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+18 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+19 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+20 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+21 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 2
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+22 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 2
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+23 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 2
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+24 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 2
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+25 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 2
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+26 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 2
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+27 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 3
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+28 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 3
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+29 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 3
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+30 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 3
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+31 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 3
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+32 // SURFACE_META V: 4 I: 6 planar
+{
 	shader textures/dev/bricks
 	entity 3
 	castShadows 0
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-18 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 4
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-19 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 4
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-20 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 4
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-21 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 4
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-22 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 4
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-23 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 4
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-24 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 5
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-25 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-26 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-27 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-28 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 5
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-29 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 5
-	castShadows 0
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-30 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 6
-	castShadows 0
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-31 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 6
-	castShadows 0
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-32 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bricks
-	entity 6
-	castShadows 0
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
 33 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bricks
-	entity 6
+	entity 4
 	castShadows 0
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 34 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bricks
+	entity 4
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+35 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 4
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+36 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 4
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+37 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 4
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+38 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 4
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+39 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 5
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+40 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+41 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+42 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+43 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 5
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+44 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 5
+	castShadows 0
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+45 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 6
+	castShadows 0
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+46 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 6
+	castShadows 0
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+47 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 6
+	castShadows 0
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+48 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
+	entity 6
+	castShadows 0
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+49 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bricks
 	entity 6
 	castShadows 0
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-35 // SURFACE_META V: 4 I: 6 planar
+50 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bricks
 	entity 6
