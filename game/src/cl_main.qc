@@ -22,20 +22,28 @@ void() draw_trajectory =
 		setmodel(self.trajectorydot, "models/trajectory_dot.iqm");
 		setsize(self.trajectorydot, '-16 -16 -16', '16 16 16');
 		self.trajectorydot.solid = SOLID_NOT;
-		self.trajectorydot.movetype = MOVETYPE_WALK;
+		self.trajectorydot.movetype = MOVETYPE_NONE;
 	}
-	tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
-	self.trajectorydot.origin = trace_endpos;
+	//tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
+	self.trajectorydot.origin = self.origin; // trace_endpos;
 	self.trajectorydot.angles = camang;
 	makevectors(camang);
 	self.trajectorydot.velocity = v_forward * (250 + power * 1800);
-	for (int i = 0; i < 20; i++)
+	vector oldorg;
+	for (int i = 0; i < 40; i++)
 	{
-		custom_physics(self.trajectorydot, 0.05);
+		custom_physics(self.trajectorydot, 0.0125);
 		self.trajectorydot.angles = vectoangles(self.trajectorydot.velocity);
-		self.trajectorydot.alpha = 1 - (i / 20);
+		self.trajectorydot.alpha = 1 - (i / 40);
 		self.trajectorydot.colormod = '0 1 0' * (0.8-power) + '1.2 0.1 0' * power; 
-		addentity(self.trajectorydot);
+		
+		if ((float)i%2)
+		{
+			oldorg = self.trajectorydot.origin;
+			self.trajectorydot.origin += self.trajectorydot.velocity * (time*0.03 % 0.025);
+			addentity(self.trajectorydot);
+			self.trajectorydot.origin = oldorg;
+		}
 	}
 };
 

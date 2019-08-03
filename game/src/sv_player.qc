@@ -85,7 +85,7 @@ void() PlayerSpawn =
 	self.classname = "player";
 	self.solid = SOLID_NOT;
 	setmodel(self, "models/testblob.iqm");
-	self.movetype = MOVETYPE_WALK;
+	self.movetype = MOVETYPE_FLY;
 	self.health = 100;
 	setorigin(self, get_spawn_point() + '0 0 16');
 	self.fixangle = TRUE;
@@ -147,10 +147,10 @@ void() SV_RunClientCommand =
 		{
 			self.last_safe = self.origin;
 			self.last_safe_angles = input_angles;
-			makevectors(input_angles + '0 0 0');
-			tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
-			setorigin(self, trace_endpos);
-			self.velocity += v_forward * (250 + self.jump_hold * 1800);
+			makevectors(input_angles);
+			// tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
+			// setorigin(self, trace_endpos);
+			self.velocity = v_forward * (250 + self.jump_hold * 1800);
 			self.jump_hold = 0;
 		}
 	}
