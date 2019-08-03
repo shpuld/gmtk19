@@ -29,7 +29,8 @@ void() draw_trajectory =
 	//tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
 	self.trajectorydot.origin = self.origin; // trace_endpos;
 	self.trajectorydot.angles = camang;
-	makevectors(camang);
+	self.trajectorydot.angles_x = max(self.trajectorydot.angles_x - 5, -90);
+	makevectors(self.trajectorydot.angles);
 	self.trajectorydot.velocity = v_forward * (250 + power * 1800);
 	vector oldorg;
 	for (int i = 0; i < 40; i++)

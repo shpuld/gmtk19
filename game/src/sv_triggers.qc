@@ -69,3 +69,9 @@ void() trigger_goal =
 	trigger_base();
 	self.touch = goal_touch;
 };
+
+void() item_health =
+{
+	setmodel(self, "models/diamond.iqm");
+	self.modelflags |= MF_ROTATE;
+};

@@ -160,6 +160,7 @@ void() SV_RunClientCommand =
 		{
 			self.last_safe = self.origin;
 			self.last_safe_angles = input_angles;
+			input_angles_x = max(input_angles_x - 5, -90);
 			makevectors(input_angles);
 			// tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
 			// setorigin(self, trace_endpos);

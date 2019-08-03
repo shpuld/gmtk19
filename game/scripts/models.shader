@@ -73,3 +73,25 @@ brickpart
 		alphaGen vertex
 	}
 }
+
+diamond
+{
+	{
+		map models/diamond
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/diamond
+		blendFunc add
+		rgbGen wave sin 0.5 0.2 1 0.2
+	}
+}
+
+diamondoutline
+{
+	{
+		map models/diamond
+		blendFunc add
+		rgbGen const 0.5 0.5 0.5
+	}
+}
