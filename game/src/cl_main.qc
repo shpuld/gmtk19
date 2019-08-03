@@ -8,10 +8,22 @@ void() CSQC_Shutdown =
 {
 };
 
+float(float isnew) player_listen =
+{
+	if (self.entnum == player_localentnum) localplayer = self;
+	return 1;
+};
+
+entity arrow_fill;
 noref void(float apiver, string enginename, float enginever) CSQC_Init =
 {
-	drawfont = loadfont("", "Courier Prime Code", "12,16,24,32,64,72,128,256,512", -1, 0, 0);
+	// drawfont = loadfont("", "Courier Prime Code", "12,16,24,32,64,72,128,256,512", -1, 0, 0);
 	precache_everything();
+	arrow_fill = spawn();
+	setmodel(arrow_fill, "models/arrow_fill.iqm");
+	arrow_fill.solid = SOLID_NOT;
+	setsize(arrow_fill, '0 0 0', '0 0 0');
+	deltalisten("models/testblob.iqm", player_listen, 0);
 };
 
 noref void() CSQC_WorldLoaded =
@@ -42,6 +54,38 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 	//autoadd entities received from servers for drawing	
 	addentities(MASK_ENGINE);
 	
+	float can_jump = getstatf(STAT_CANJUMP);
+	float jump_power = getstatf(STAT_POWER);
+	if (can_jump)
+	{
+		/*
+		setorigin(arrow_fill, localplayer.origin);
+		arrow_fill.angles = camang;
+		arrow_fill.angles_x *= -1;
+		arrow_fill.alpha = 0.01 + jump_power;
+		addentity(arrow_fill);
+		*/
+		makevectors(camang);
+		vector rgt = 16 * v_right;
+		vector fwd = 128 * v_forward;
+		vector org = localplayer.origin + '0 0 16';
+		float frc = jump_power / 0.8;
+		
+		R_BeginPolygon("arrow_fill2", 0, 0);
+		R_PolygonVertex(org - rgt, [0, 1], '1 1 1', frc);
+		R_PolygonVertex(org - rgt + fwd * frc, [0, 1 - frc], '1 1 1', frc);
+		R_PolygonVertex(org + rgt + fwd * frc, [1, 1 - frc], '1 1 1', frc);
+		R_PolygonVertex(org + rgt, [1, 1], '1 1 1', frc);
+		R_EndPolygon();
+		
+		
+		R_BeginPolygon("arrow_outline", 0, 0);
+		R_PolygonVertex(org - rgt, [0, 1], '1 1 1', 1);
+		R_PolygonVertex(org - rgt + fwd, [0, 0], '1 1 1', 1);
+		R_PolygonVertex(org + rgt + fwd, [1, 0], '1 1 1', 1);
+		R_PolygonVertex(org + rgt, [1, 1], '1 1 1', 1);
+		R_EndPolygon();
+	}
 	//does what you think it does
 	renderscene();
 	

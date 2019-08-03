@@ -14,6 +14,9 @@ void() StartFrame =
 void() worldspawn =
 {	
 	precache_everything();
+	
+	clientstat(STAT_POWER, EV_FLOAT, jump_hold);
+	clientstat(STAT_CANJUMP, EV_FLOAT, can_jump);
 };
 
 void() SpectatorConnect =
