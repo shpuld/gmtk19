@@ -1,3 +1,14 @@
+textures/dev/goal
+{
+
+	q3map_surfacelight 70
+	surfaceparm nolightmap
+	{
+		map $nearest:textures/dev/goal.tga
+		rgbGen identity
+	}
+}
+
 textures/dev/white
 {
 	{
@@ -279,7 +290,7 @@ textures/dev/test_sky
 	q3map_globaltexture
 	q3map_skylight 110 3
 	q3map_sun 0.9 0.8 0.7 50 60 45
-	
+
 	surfaceparm sky
 	surfaceparm noimpact
 	surfaceparm nolightmap
