@@ -16,7 +16,7 @@ float(float isnew) player_listen =
 	if (self.entnum == player_localentnum) localplayer = self;
 	float speed = vlen(self.velocity);
 	self.frame = 0;
-	self.frame1time = 0;
+	self.frame1time = 0 + fabs(sin(time * 0.8) * 0.2);
 	self.frame2 = 2;
 	self.frame2time = min(frameduration(self.modelindex, 2), speed / 2000);
 	self.angles_y = self.last_yaw;
@@ -40,9 +40,9 @@ float(float isnew) player_listen =
 		self.lerpfrac = self.framelerp;
 		
 		float power = getstatf(STAT_POWER);
-		self.frame1time = power;
-		if (power > 0.05)
+		if (power > 0.02)
 		{
+			self.frame1time = power;
 			self.angles_y = camang_y;
 		}
 	}
@@ -59,6 +59,11 @@ float(float isnew) player_listen =
 	self.angles_x *= -1;
 	makevectors(self.angles);
 	self.aimdir = v_forward;
+	
+	traceline(self.origin, self.origin - '0 0 990000', MOVE_NOMONSTERS, self);
+	float shadowdist = vlen(self.origin - trace_endpos);
+	float shadowval = bound(0, (400 - shadowdist) * 0.001, 0.2);
+	adddecal("blobshadow", trace_endpos, '0 0 2', '0.03 0 0', '1 1 1', shadowval);
 	return 1;
 };
 

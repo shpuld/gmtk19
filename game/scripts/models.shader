@@ -40,3 +40,16 @@ testblob
 		alphaGen entity
 	}
 }
+
+blobshadow
+{
+	polygonOffset 1
+	discrete
+	sort unlitdecal
+	noShadows
+	{
+		map textures/blobshadow
+		blendFunc blend
+		alphaGen vertex	
+	}
+}
