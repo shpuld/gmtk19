@@ -1,3 +1,24 @@
+textures/dev/window
+{
+	qer_alphaFunc gequal 0.5
+	trans
+	surfaceparm detail
+	surfaceparm lightfilter
+	surfaceparm alphashadow
+	{
+		map $nearest:textures/dev/window.tga
+		alphaGen 0.1
+		blendfunc blend
+		rgbGen identity
+	}
+	{
+		map $lightmap
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen identity
+	}
+
+}
+
 textures/dev/goal
 {
 

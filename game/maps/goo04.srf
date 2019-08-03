@@ -1,0 +1,1844 @@
+default
+{
+	castShadows 1
+	receiveShadows 1
+	sampleSize 16
+	longestCurve 0.000000
+}
+
+0 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+1 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+2 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+3 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+4 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+5 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+6 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+7 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+8 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+9 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+10 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+11 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+12 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+13 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+14 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+15 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+16 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+17 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+18 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+19 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+20 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+21 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+22 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+23 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+24 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+25 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+26 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+27 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+28 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+29 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+30 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+31 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+32 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+33 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+34 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+35 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+36 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+37 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+38 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+39 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+40 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+41 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+42 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+43 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+44 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+45 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+46 // SURFACE_TRIANGLES V: 6 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+47 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+48 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+49 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+50 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+51 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+52 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+53 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+54 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+55 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+56 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+57 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+58 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+59 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+60 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+61 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+62 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+63 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+64 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+65 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+66 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+67 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+68 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+69 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+70 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+71 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+72 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+73 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+74 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+75 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+76 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+77 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+78 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+79 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+80 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+81 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+82 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+83 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+84 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+85 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+86 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+87 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+88 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+89 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+90 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+91 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+92 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+93 // SURFACE_TRIANGLES V: 6 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+94 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+95 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+96 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+97 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+98 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+99 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+100 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+101 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+102 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+103 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+104 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+105 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+106 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+107 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+108 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+109 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+110 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+111 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+112 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+113 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+114 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+115 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+116 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+117 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+118 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+119 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+120 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+121 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+122 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+123 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+124 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+125 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+126 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+127 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+128 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+129 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+130 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+131 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+132 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+133 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+134 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+135 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+136 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+137 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+138 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+139 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+140 // SURFACE_TRIANGLES V: 6 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+141 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+142 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+143 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+144 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+145 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+146 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+147 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+148 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+149 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+150 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+151 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+152 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+153 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+154 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+155 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+156 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+157 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+158 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+159 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+160 // SURFACE_TRIANGLES V: 4 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+161 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+162 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+163 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+164 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+165 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+166 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+167 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+168 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+169 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+170 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+171 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+172 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+173 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+174 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+175 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+176 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+177 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+178 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+179 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+180 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+181 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+182 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+183 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+184 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+185 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+186 // SURFACE_TRIANGLES V: 3 I: 3 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+187 // SURFACE_TRIANGLES V: 6 I: 6 
+{
+	shader textures/dev/graydark
+	sampleSize 0
+}
+
+188 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+189 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+190 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+191 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+192 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+193 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+194 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/dev/purple
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+195 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purple
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+196 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/dev/purple
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+197 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purple
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+198 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purple
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+199 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purple
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+200 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+201 // SURFACE_META V: 15 I: 42 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+202 // SURFACE_META V: 15 I: 42 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+203 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+204 // SURFACE_META V: 18 I: 42 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+205 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+206 // SURFACE_META V: 18 I: 42 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+207 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+208 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+209 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+210 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+211 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+212 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+213 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+214 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+215 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+216 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+217 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+218 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+219 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+220 // SURFACE_META V: 14 I: 42 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+221 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+222 // SURFACE_META V: 14 I: 42 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+223 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+224 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+225 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+226 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+227 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+228 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+229 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/brown
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+230 // SURFACE_META V: 8 I: 21 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+231 // SURFACE_META V: 12 I: 30 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+232 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+233 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+234 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+235 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+236 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+237 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+238 // SURFACE_META V: 14 I: 42 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+239 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+240 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+241 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+242 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+243 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+244 // SURFACE_META V: 8 I: 21 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+245 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+246 // SURFACE_META V: 10 I: 24 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+247 // SURFACE_META V: 12 I: 36 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+248 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+249 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+250 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+251 // SURFACE_META V: 10 I: 24 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+252 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+253 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+254 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+255 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+256 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+257 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+258 // SURFACE_META V: 10 I: 18 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+259 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+260 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+261 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+262 // SURFACE_META V: 18 I: 42 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+263 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+264 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+265 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+266 // SURFACE_META V: 24 I: 48 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+267 // SURFACE_META V: 16 I: 30 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+268 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+269 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+270 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+271 // SURFACE_META V: 16 I: 30 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+272 // SURFACE_META V: 10 I: 18 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+273 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/green
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+274 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/green
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+275 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/green
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+276 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/green
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+277 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/green
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+278 // SURFACE_META V: 12 I: 30 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+279 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+280 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+281 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+282 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+283 // SURFACE_META V: 19 I: 39 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+284 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+285 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+286 // SURFACE_META V: 8 I: 12 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+287 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+288 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+289 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+290 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+291 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+292 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+293 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+294 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/gray
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+295 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+296 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+297 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+298 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+299 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+300 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+301 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+302 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+303 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+304 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+305 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/window
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
