@@ -1,0 +1,38 @@
+default
+{
+	castShadows 1
+	receiveShadows 1
+	sampleSize 16
+	longestCurve 0.000000
+}
+
+0 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+1 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+2 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+3 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+4 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
