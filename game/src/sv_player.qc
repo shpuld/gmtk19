@@ -20,6 +20,10 @@ void() CheckImpulses =
 {
 	switch (self.impulse)
 	{
+	case 100:
+		self.origin = self.last_safe;
+		self.angles = self.last_safe_angles;
+		self.velocity = '0 0 0';
 	default: break;
 	}
 	self.impulse = 0;
@@ -153,16 +157,13 @@ void() custom_physics =
 	{
 		self.velocity = vector_bounce(self.velocity, trace_plane_normal);
 		self.velocity *= 0.8;
-		if (trace_plane_normal_z > 0.7 && vlen(self.velocity) < 30*60*input_timelength)
+		if (trace_plane_normal_z > 0.6 && vlen(self.velocity) < 30*60*input_timelength)
 		{
 			self.velocity = '0 0 0';
 		}
 	}
 };
 
-.float jump_hold;
-.float can_jump;
-.float can_jump_time;
 void() SV_RunClientCommand =
 {
 	input_movevalues = '0 0 0';
@@ -174,16 +175,18 @@ void() SV_RunClientCommand =
 		// printf("jump: %f %f\n", self.jump_hold, time);
 		if (!input_buttons)
 		{
+			self.last_safe = self.origin;
+			self.last_safe_angles = input_angles;
 			makevectors(input_angles + '-3 0 0');
 			tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
 			setorigin(self, trace_endpos);
-			self.velocity += v_forward * (400 + self.jump_hold * 1700);
+			self.velocity += v_forward * (250 + self.jump_hold * 1800);
 			self.jump_hold = 0;
 		}
 	}
 	if (input_buttons && self.can_jump)
 	{
-		self.jump_hold += input_timelength;
+		self.jump_hold += input_timelength * 0.9;
 		self.jump_hold = min(0.8, self.jump_hold);
 		
 	}
@@ -192,7 +195,10 @@ void() SV_RunClientCommand =
 		
 		self.can_jump_time += input_timelength;
 		if (self.can_jump_time > 0.25)
+		{
 			self.can_jump = TRUE;
+			
+		}
 	}
 	else
 	{

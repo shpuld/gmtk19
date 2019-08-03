@@ -1,6 +1,10 @@
 // put custom server-only globals and fields here
 
-.entity move_entity;
+.float jump_hold;
+.float can_jump;
+.float can_jump_time;
+.vector last_safe;
+.vector last_safe_angles;
 
 const float FL_JUMPRELEASED = 4096;
 
