@@ -1,7 +1,7 @@
 textures/dev/goal
 {
 
-	q3map_surfacelight 70
+	q3map_surfacelight 80
 	surfaceparm nolightmap
 	{
 		map $nearest:textures/dev/goal.tga
@@ -288,7 +288,7 @@ textures/dev/test_sky
 	qer_editorimage textures/dev/edsky.tga
 
 	q3map_globaltexture
-	q3map_skylight 110 3
+	q3map_skylight 150 3
 	q3map_sun 0.9 0.8 0.7 50 60 45
 
 	surfaceparm sky
