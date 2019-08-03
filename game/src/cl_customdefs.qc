@@ -38,4 +38,4 @@ vector() readvector =
 	return r;
 };
 
-void(float speed) handlebounce = {};
+void(float speed, entity blob) handlebounce = {};

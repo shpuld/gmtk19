@@ -166,10 +166,13 @@ void(string command_string) SV_ParseClientCommand =
 	clientcommand(self, command_string);
 };
 
-void(float speed) handlebounce =
+void(float speed, entity blob) handlebounce =
 {
 	float vol = min(1, ((speed - 200) * 0.001));
 	sound(world, CHAN_AUTO, "sounds/splatbig1.wav", vol, 0, 100);
+	
+	if (speed > 350)
+		pointparticles(particleeffectnum("weapons.blob_bounce"), blob.origin, '0 0 1', 1);
 };
 
 void() SV_RunClientCommand =

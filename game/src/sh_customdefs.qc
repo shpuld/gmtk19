@@ -22,6 +22,7 @@ void() precache_everything =
 	particleeffectnum("weapons.blob_die");
 	particleeffectnum("weapons.bricks");
 	particleeffectnum("weapons.diamond_pickup");
+	particleeffectnum("weapons.blob_bounce");
 	
 	precache_sound("sounds/splatbig1.wav");
 	precache_sound("sounds/splatbig2.wav");
@@ -42,7 +43,7 @@ vector(vector v, vector n) vector_bounce =
 	return v - (v * n) * n * 1.5;
 };
 
-void(float speed) handlebounce;
+void(float speed, entity blob) handlebounce;
 void(entity pl, float length) custom_physics = 
 {
 	vector start = pl.origin;
@@ -66,7 +67,7 @@ void(entity pl, float length) custom_physics =
 	{
 		if (vlen(pl.velocity) > 200)
 		{
-			handlebounce(vlen(pl.velocity));
+			handlebounce(vlen(pl.velocity), pl);
 		}
 		pl.velocity = vector_bounce(pl.velocity, trace_plane_normal);
 		pl.velocity *= 0.8;
