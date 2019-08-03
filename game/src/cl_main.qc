@@ -44,6 +44,7 @@ float(float isnew) player_listen =
 		{
 			self.frame1time = power;
 			self.angles_y = camang_y;
+			self.origin += [sin(time*40) + cos(time*100), sin(time*90) + cos(time*110), sin(time*105) + cos(time*90)] * max(0, power - 0.65);
 		}
 	}
 	if (vlen(self.origin - campos) < 80)

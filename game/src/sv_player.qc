@@ -179,7 +179,7 @@ void() SV_RunClientCommand =
 		{
 			self.last_safe = self.origin;
 			self.last_safe_angles = input_angles;
-			makevectors(input_angles + '-3 0 0');
+			makevectors(input_angles + '0 0 0');
 			tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
 			setorigin(self, trace_endpos);
 			self.velocity += v_forward * (250 + self.jump_hold * 1800);
