@@ -35,7 +35,7 @@ void(entity pl, float length) custom_physics =
 	vector start = pl.origin;
 	vector end = pl.origin + pl.velocity * length;
 	tracebox(start, pl.mins, pl.maxs, end, MOVE_TRIGGERS, pl);
-	if (trace_ent)
+	if (trace_ent && trace_ent.touch)
 	{
 		entity oself;
 		oself = self;

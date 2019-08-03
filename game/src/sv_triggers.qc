@@ -27,9 +27,27 @@ void() func_illusionary =
 	self.solid = SOLID_NOT;
 };
 
+void() bricks_touch =
+{
+	if (other.classname != "player") return;
+	if (vlen(other.velocity) > 600)
+	{
+		self.think = sub_remove;
+		self.nextthink = time;
+	}
+};
+
+void() func_bricks =
+{
+	setmodel(self, self.model);
+	self.solid = SOLID_BSP;
+	self.touch = bricks_touch;
+};
+
 void() death_touch =
 {
 	if (other.is_dead) return;
+	if (other.classname != "player") return;
 	player_die(other);
 };
 
