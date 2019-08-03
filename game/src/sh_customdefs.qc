@@ -18,6 +18,7 @@ void() precache_everything =
 	precache_model("models/arrow_fill.iqm");
 	precache_model("models/trajectory_dot.iqm");
 	precache_model("models/diamond.iqm");
+	precache_model("models/skybox.iqm");
 	particleeffectnum("weapons.blob_die");
 	particleeffectnum("weapons.bricks");
 	particleeffectnum("weapons.diamond_pickup");

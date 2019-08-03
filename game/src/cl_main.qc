@@ -117,14 +117,13 @@ float(float isnew) player_listen =
 };
 
 entity arrow_fill;
+entity skymodel;
 noref void(float apiver, string enginename, float enginever) CSQC_Init =
 {
 	// drawfont = loadfont("", "Courier Prime Code", "12,16,24,32,64,72,128,256,512", -1, 0, 0);
 	precache_everything();
-	arrow_fill = spawn();
-	setmodel(arrow_fill, "models/arrow_fill.iqm");
-	arrow_fill.solid = SOLID_NOT;
-	setsize(arrow_fill, '0 0 0', '0 0 0');
+	skymodel = spawn();
+	setmodel(skymodel, "models/skybox.iqm");
 	deltalisten("models/testblob.iqm", player_listen, 0);
 };
 
@@ -182,6 +181,7 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 		R_EndPolygon();
 	}
 	//does what you think it does
+	addentity(skymodel);
 	renderscene();
 	
 	draw_hud();

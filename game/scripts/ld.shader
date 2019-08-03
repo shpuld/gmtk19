@@ -81,11 +81,45 @@ gfx/hp_top
 
 sky
 {
-	cull disable
+	sort sky
 	{
 		map models/sky
 	}
 }
+
+ground
+{
+	sort sky
+	{
+		map models/ground
+	}
+}
+
+water
+{
+	sort sky
+	{
+		map models/water
+		tcmod scroll 0.06 0.08
+		blendFunc filter
+		rgbGen vertex
+	}
+	{
+		map models/water
+		tcmod scroll 0.05 -0.03
+		tcmod scale 0.8 0.8
+		blendFunc add
+		rgbGen vertex
+	}
+	{
+		map models/water
+		tcmod scroll -0.01 -0.01
+		tcmod scale 0.9 0.9
+		blendFunc add
+		rgbGen vertex
+	}
+}
+
 
 sun
 {
