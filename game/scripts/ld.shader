@@ -107,14 +107,14 @@ water
 	{
 		map models/water
 		tcmod scroll 0.05 -0.03
-		tcmod scale 0.8 0.8
+		tcmod scale 0.7 0.7
 		blendFunc add
 		rgbGen vertex
 	}
 	{
 		map models/water
 		tcmod scroll -0.01 -0.01
-		tcmod scale 0.9 0.9
+		tcmod scale 0.8 0.8
 		blendFunc add
 		rgbGen vertex
 	}
