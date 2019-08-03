@@ -9,25 +9,56 @@ void() CSQC_Shutdown =
 };
 
 .float last_yaw;
+.float framelerp;
+.vector aimdir;
 float(float isnew) player_listen =
 {
 	if (self.entnum == player_localentnum) localplayer = self;
 	float speed = vlen(self.velocity);
+	self.frame = 0;
 	self.frame1time = 0;
+	self.frame2 = 2;
+	self.frame2time = min(frameduration(self.modelindex, 2), speed / 2000);
 	self.angles_y = self.last_yaw;
 	if (speed > 40)
 	{
 		vector velangles = vectoangles(self.velocity);
 		if (velangles_x > 180) velangles_x -= 360;
-		float pitch_factor = min(1, speed / 1600);
-		printf("pitch fac %f, velpitch %f\n", pitch_factor, velangles_x);
+		float pitch_factor = min(1, speed / 1700);
+		// printf("pitch fac %f, velpitch %f\n", pitch_factor, velangles_x);
 		self.angles_x = velangles_x * pitch_factor;
 		self.angles_y = velangles_y;
 		self.last_yaw = self.angles_y;
-		self.frame2 = 2;
-		self.frame2time = min(frameduration(self.modelindex, 2), speed / 2000);
-		self.lerpfrac = 1;
+		self.framelerp += frametime * 10;
+		self.framelerp = min(1, self.framelerp);
+		self.lerpfrac = self.framelerp;
 	}
+	else
+	{
+		self.framelerp -= frametime * 10;
+		self.framelerp = max(0, self.framelerp);
+		self.lerpfrac = self.framelerp;
+		
+		float power = getstatf(STAT_POWER);
+		self.frame1time = power;
+		if (power > 0.05)
+		{
+			self.angles_y = camang_y;
+		}
+	}
+	if (vlen(self.origin - campos) < 80)
+	{
+		float dist = vlen(self.origin - campos);
+		self.alpha = 1 * (dist/80);
+	}
+	makevectors(self.angles);
+	vector newdir = v_forward;
+	makevectors(self.aimdir);
+	vector olddir = self.aimdir;
+	self.angles = vectoangles((olddir*7 + newdir) / 8);
+	self.angles_x *= -1;
+	makevectors(self.angles);
+	self.aimdir = v_forward;
 	return 1;
 };
 
@@ -105,6 +136,8 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 	}
 	//does what you think it does
 	renderscene();
+	
+	draw_hud();
 	
 	/*sui_pre_draw(g_width, g_height);
 	

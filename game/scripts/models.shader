@@ -37,5 +37,6 @@ testblob
 {
 	{
 		map models/testblob
+		alphaGen entity
 	}
 }

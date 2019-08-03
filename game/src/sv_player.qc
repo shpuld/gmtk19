@@ -23,6 +23,8 @@ void() CheckImpulses =
 	case 100:
 		self.origin = self.last_safe;
 		self.angles = self.last_safe_angles;
+		self.v_angle = self.last_safe_angles;
+		self.fixangle = TRUE;
 		self.velocity = '0 0 0';
 	default: break;
 	}
