@@ -5,12 +5,16 @@
 const float STAT_POWER = 51;
 const float STAT_CANJUMP = 52;
 
+const float EV_DIE = 10;
+const float EV_REVIVE = 11;
+
 void() precache_everything =
 {
 	precache_sound("demon/dland2.wav");
 	precache_model("models/testblob.iqm");
 	precache_model("models/arrow_fill.iqm");
 	precache_model("models/trajectory_dot.iqm");
+	particleeffectnum("weapons.blob_die");
 };
 
 
@@ -30,10 +34,20 @@ void(entity pl, float length) custom_physics =
 {
 	vector start = pl.origin;
 	vector end = pl.origin + pl.velocity * length;
+	tracebox(start, pl.mins, pl.maxs, end, MOVE_TRIGGERS, pl);
+	if (trace_ent)
+	{
+		entity oself;
+		oself = self;
+		self = trace_ent;
+		other = pl;
+		self.touch();
+		self = oself;
+	}
 	tracebox(start, pl.mins, pl.maxs, end, 0, pl);
 	if (trace_fraction == 1)
 		pl.velocity -= '0 0 1' * cvar("sv_gravity") * length;
-	tracebox(start, pl.mins, pl.maxs, end, 0, pl);
+	// tracebox(start, pl.mins, pl.maxs, end, 0, pl);
 	setorigin(pl, trace_endpos);
 	if (trace_fraction < 1)
 	{

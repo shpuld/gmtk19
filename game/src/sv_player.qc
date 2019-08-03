@@ -16,16 +16,26 @@ void() PlayerJump =
 	self.button2 = 0;
 };
 
+void() respawn_to_last_safe =
+{
+	self.origin = self.last_safe;
+	self.angles = self.last_safe_angles;
+	self.v_angle = self.last_safe_angles;
+	self.fixangle = TRUE;
+	self.velocity = '0 0 0';
+	
+	msg_entity = self;
+	BeginEvent(EV_REVIVE);
+	multicast('0 0 0', MULTICAST_ONE_R);
+	self.is_dead = FALSE;
+};
+
 void() CheckImpulses =
 {
 	switch (self.impulse)
 	{
 	case 100:
-		self.origin = self.last_safe;
-		self.angles = self.last_safe_angles;
-		self.v_angle = self.last_safe_angles;
-		self.fixangle = TRUE;
-		self.velocity = '0 0 0';
+		respawn_to_last_safe();
 	default: break;
 	}
 	self.impulse = 0;
@@ -46,6 +56,7 @@ void() PlayerPreThink =
 	CheckImpulses();
 	makevectors(self.v_angle);
 
+	if (self.is_dead && time - self.dead_time > 2) respawn_to_last_safe();
 	/*
 	if (vlen(to_move_entity) > 0)
 	{
@@ -83,8 +94,9 @@ void() ClientConnect =
 void() PlayerSpawn =
 {
 	self.classname = "player";
-	self.solid = SOLID_NOT;
+	self.solid = SOLID_SLIDEBOX;
 	setmodel(self, "models/testblob.iqm");
+	self.real_modelindex = self.modelindex;
 	self.movetype = MOVETYPE_FLY;
 	self.health = 100;
 	setorigin(self, get_spawn_point() + '0 0 16');
@@ -140,6 +152,7 @@ void() SV_RunClientCommand =
 	input_buttons -= input_buttons & 2;
 	float speed = vlen(self.velocity);
 	//printf("speed %v\n", self.velocity);
+	if (self.is_dead) return;
 	if (self.jump_hold)
 	{
 		// printf("jump: %f %f\n", self.jump_hold, time);
@@ -157,8 +170,7 @@ void() SV_RunClientCommand =
 	if (input_buttons && self.can_jump)
 	{
 		self.jump_hold += input_timelength * 0.8;
-		self.jump_hold = min(0.8, self.jump_hold);
-		
+		self.jump_hold = min(0.8, self.jump_hold);	
 	}
 	if (speed < 30*60*input_timelength)
 	{

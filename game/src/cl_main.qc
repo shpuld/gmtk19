@@ -13,6 +13,8 @@ void() CSQC_Shutdown =
 .vector aimdir;
 .entity trajectorydot;
 
+float is_dead;
+
 void() draw_trajectory =
 {
 	float power = getstatf(STAT_POWER);
@@ -49,6 +51,12 @@ void() draw_trajectory =
 
 float(float isnew) player_listen =
 {
+	if (is_dead) 
+	{
+		self.modelindex = 0;
+		return 1;
+	}
+	
 	if (self.entnum == player_localentnum) localplayer = self;
 	float speed = vlen(self.velocity);
 	self.frame = 0;
@@ -149,13 +157,6 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 	float jump_power = getstatf(STAT_POWER);
 	if (can_jump)
 	{
-		/*
-		setorigin(arrow_fill, localplayer.origin);
-		arrow_fill.angles = camang;
-		arrow_fill.angles_x *= -1;
-		arrow_fill.alpha = 0.01 + jump_power;
-		addentity(arrow_fill);
-		*/
 		makevectors(camang);
 		vector rgt = 16 * v_right;
 		vector fwd = 128 * v_forward;
@@ -224,6 +225,12 @@ void() CSQC_Parse_Event =
 {
 	float first = readbyte();
 	switch(first) {
+		case EV_DIE:
+			is_dead = TRUE;
+			break;
+		case EV_REVIVE:
+			is_dead = FALSE;
+			break;
 		default:
 			printf("No action for byte %f\n", first);
 			break;

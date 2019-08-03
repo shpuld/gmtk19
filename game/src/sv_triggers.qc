@@ -9,6 +9,14 @@ void() trigger_example =
 };
 */
 
+void() trigger_base =
+{
+	setmodel(self, self.model);
+	self.modelindex = 0;
+	self.solid = SOLID_TRIGGER;
+	self.flags |= FL_FINDABLE_NONSOLID;
+};
+
 void() info_null =
 {
 };
@@ -21,14 +29,14 @@ void() func_illusionary =
 
 void() death_touch =
 {
-	printf("someone %s died\n", etos(other));
+	if (other.is_dead) return;
+	player_die(other);
 };
 
 void() trigger_death =
 {
-	setmodel(self, self.model);
-	self.modelindex = 0;
-	self.solid = SOLID_TRIGGER;
+	print("trigger death in map\n");
+	trigger_base();
 	self.touch = death_touch;
 };
 
@@ -39,8 +47,6 @@ void() goal_touch =
 
 void() trigger_goal =
 {
-	setmodel(self, self.model);
-	self.modelindex = 0;
-	self.solid = SOLID_TRIGGER;
+	trigger_base();
 	self.touch = goal_touch;
 };
