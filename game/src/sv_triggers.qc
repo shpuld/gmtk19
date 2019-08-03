@@ -70,8 +70,18 @@ void() trigger_goal =
 	self.touch = goal_touch;
 };
 
+void() diamond_touch =
+{
+	pointparticles(particleeffectnum("weapons.diamond_pickup"), self.origin, '0 0 1', 1);
+	remove(self);
+};
+
 void() item_health =
 {
 	setmodel(self, "models/diamond.iqm");
 	self.modelflags |= MF_ROTATE;
+	setsize(self, '-24 -24 -24', '24 24 24');
+	self.solid = SOLID_TRIGGER;
+	self.flags |= FL_FINDABLE_NONSOLID;
+	self.touch = diamond_touch;
 };

@@ -17,6 +17,7 @@ void() precache_everything =
 	precache_model("models/diamond.iqm");
 	particleeffectnum("weapons.blob_die");
 	particleeffectnum("weapons.bricks");
+	particleeffectnum("weapons.diamond_pickup");
 };
 
 

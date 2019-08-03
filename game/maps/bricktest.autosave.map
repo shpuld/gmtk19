@@ -160,3 +160,8 @@ brushDef
 }
 }
 }
+// entity 7
+{
+"classname" "item_health"
+"origin" "160 -128 96"
+}
