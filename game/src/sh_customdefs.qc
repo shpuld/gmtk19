@@ -6,5 +6,5 @@
 void() precache_everything =
 {
 	precache_sound("demon/dland2.wav");
-	precache_model("models/testplayer.iqm");
+	precache_model("models/testblob.iqm");
 };
