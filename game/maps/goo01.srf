@@ -276,16 +276,16 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-45 // SURFACE_META V: 7 I: 15 planar
-{
-	shader textures/dev/blue
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
-}
-
-46 // SURFACE_META V: 6 I: 12 planar
+45 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/blue
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+46 // SURFACE_META V: 7 I: 15 planar
+{
+	shader textures/dev/blue
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 47 // SURFACE_META V: 5 I: 9 planar
