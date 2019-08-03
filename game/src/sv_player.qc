@@ -85,7 +85,7 @@ void() PlayerSpawn =
 	self.classname = "player";
 	self.solid = SOLID_NOT;
 	setmodel(self, "models/testblob.iqm");
-	self.movetype = MOVETYPE_FLY;
+	self.movetype = MOVETYPE_WALK;
 	self.health = 100;
 	setorigin(self, get_spawn_point() + '0 0 16');
 	self.fixangle = TRUE;
@@ -134,38 +134,6 @@ void(string command_string) SV_ParseClientCommand =
 	clientcommand(self, command_string);
 };
 
-vector(vector to, vector vec) vector_project =
-{
-	float to_len = vlen(to);
-	return ((to * vec)/(to_len * to_len)) * to;
-};
-
-vector(vector v, vector n) vector_bounce =
-{
-	// n = normalize(n);
-	return v - (v * n) * n * 1.5;
-};
-
-void() custom_physics = 
-{
-	vector start = self.origin;
-	vector end = self.origin + self.velocity * input_timelength;
-	tracebox(start, self.mins, self.maxs, end, 0, self);
-	if (trace_fraction == 1)
-		self.velocity -= '0 0 1' * cvar("sv_gravity") * input_timelength;
-	tracebox(start, self.mins, self.maxs, end, 0, self);
-	setorigin(self, trace_endpos);
-	if (trace_fraction < 1)
-	{
-		self.velocity = vector_bounce(self.velocity, trace_plane_normal);
-		self.velocity *= 0.8;
-		if (trace_plane_normal_z > 0.6 && vlen(self.velocity) < 30*60*input_timelength)
-		{
-			self.velocity = '0 0 0';
-		}
-	}
-};
-
 void() SV_RunClientCommand =
 {
 	input_movevalues = '0 0 0';
@@ -188,7 +156,7 @@ void() SV_RunClientCommand =
 	}
 	if (input_buttons && self.can_jump)
 	{
-		self.jump_hold += input_timelength * 0.9;
+		self.jump_hold += input_timelength * 0.8;
 		self.jump_hold = min(0.8, self.jump_hold);
 		
 	}
@@ -207,7 +175,7 @@ void() SV_RunClientCommand =
 		self.can_jump_time = 0;
 		self.can_jump = FALSE;
 	}
-	custom_physics();
+	custom_physics(self, input_timelength);
 };
 
 
