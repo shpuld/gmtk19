@@ -233,7 +233,7 @@ void() help_menu =
 void() main_menu =
 {
 	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_START]);
-	sui_text([0, 64], MENU_TEXT_LARGE, "Title Screen", [1, 1, 1], 1, 0);
+	sui_text([0, 64], MENU_TEXT_LARGE, "Shoot Your Goo!", [1, 1, 1], 1, 0);
 	
 	vector pos = [0, -24];
 	vector size = [120, 140];

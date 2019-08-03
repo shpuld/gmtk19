@@ -5,10 +5,14 @@
 .float can_jump_time;
 .vector last_safe;
 .vector last_safe_angles;
+.float last_safe_sticky_jumps;
+.float last_safe_rocket_jumps;
 .float real_modelindex;
 .float is_dead;
 .float dead_time;
 .float active_jump;
+.float sticky_jumps;
+.float rocket_jumps;
 
 float diamonds;
 float diamonds_total;

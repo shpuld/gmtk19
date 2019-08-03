@@ -237,7 +237,11 @@ void() CSQC_Parse_Event =
 		case EV_GOAL:
 			if (getstatf(STAT_DIAMONDS) < getstatf(STAT_DIAMONDS_TOTAL))
 			{
-				
+				not_enough_diamonds_time = 1;
+			}
+			else
+			{
+				win_time = 3;
 			}
 			break;
 		default:

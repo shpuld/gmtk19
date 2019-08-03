@@ -23,6 +23,8 @@ void() respawn_to_last_safe =
 	self.origin = self.last_safe;
 	self.angles = self.last_safe_angles;
 	self.v_angle = self.last_safe_angles;
+	self.sticky_jumps = self.last_safe_sticky_jumps;
+	self.rocket_jumps = self.last_safe_rocket_jumps;
 	self.fixangle = TRUE;
 	self.velocity = '0 0 0';
 	
@@ -41,6 +43,9 @@ void() respawn_to_last_safe =
 				break;
 			case "func_bricks":
 				undo_bricks(undoent);
+				break;
+			case "item_haste":
+				undo_glue(undoent);
 				break;
 			default: break;
 		}

@@ -102,7 +102,25 @@ diamondoutline
 {
 	{
 		map models/diamond
+	}
+}
+
+glue
+{
+	{
+		map models/glue
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/glue
 		blendFunc add
-		rgbGen const 0.5 0.5 0.5
+		rgbGen wave sin 0.5 0.2 1 0.2
+	}
+}
+
+glueoutline
+{
+	{
+		map models/glue
 	}
 }

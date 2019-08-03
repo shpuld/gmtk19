@@ -115,3 +115,29 @@ void() item_health =
 	self.touch = diamond_touch;
 	diamonds_total += 1;
 };
+
+void(entity glue) undo_glue =
+{
+	glue.modelindex = glue.real_modelindex;
+};
+
+void() glue_touch =
+{
+	if (other.classname != "player" || self.modelindex == 0) return;
+	self.active_jump = other.active_jump;
+	self.modelindex = 0;
+	sound(other, CHAN_AUTO, "sounds/diamondpickup2.wav", 0.5, 0, 50);
+	other.sticky_jumps = 5;
+};
+
+void() item_haste =
+{
+	// todo add particles
+	setmodel(self, "models/glue.iqm");
+	self.real_modelindex = self.modelindex;
+	self.modelflags |= MF_ROTATE;
+	setsize(self, '-24 -24 -24', '24 24 24');
+	self.solid = SOLID_TRIGGER;
+	self.flags |= FL_FINDABLE_NONSOLID;
+	self.touch = glue_touch;
+};
