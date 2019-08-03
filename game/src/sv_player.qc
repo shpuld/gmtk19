@@ -134,10 +134,10 @@ vector(vector to, vector vec) vector_project =
 	return ((to * vec)/(to_len * to_len)) * to;
 };
 
-vector(vector v, vector n) vector_reflect =
+vector(vector v, vector n) vector_bounce =
 {
 	// n = normalize(n);
-	return -2 * (v * n) * n + v;
+	return v - (v * n) * n * 1.5;
 };
 
 void() custom_physics = 
@@ -151,12 +151,10 @@ void() custom_physics =
 	setorigin(self, trace_endpos);
 	if (trace_fraction < 1)
 	{
-		self.velocity = vector_reflect(self.velocity, trace_plane_normal);
-		self.velocity *= 0.5;
-		//printf("trace plane normal: %v, self.velocity %v\n", trace_plane_normal, self.velocity);
+		self.velocity = vector_bounce(self.velocity, trace_plane_normal);
+		self.velocity *= 0.8;
 		if (trace_plane_normal_z > 0.7 && vlen(self.velocity) < 30*60*input_timelength)
 		{
-			//print("reset velocity\n");
 			self.velocity = '0 0 0';
 		}
 	}
