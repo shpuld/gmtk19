@@ -163,5 +163,50 @@ brushDef
 // entity 7
 {
 "classname" "item_health"
-"origin" "160 -128 96"
+"origin" "-208 -120 88"
+}
+// entity 8
+{
+"classname" "item_health"
+"origin" "160 -128 88"
+}
+// entity 9
+{
+"classname" "item_health"
+"origin" "128 -64 88"
+}
+// entity 10
+{
+"classname" "item_health"
+"origin" "128 8 88"
+}
+// entity 11
+{
+"classname" "item_health"
+"origin" "48 64 88"
+}
+// entity 12
+{
+"classname" "item_health"
+"origin" "-168 -152 88"
+}
+// entity 13
+{
+"classname" "item_health"
+"origin" "-24 -192 88"
+}
+// entity 14
+{
+"classname" "item_health"
+"origin" "128 -200 88"
+}
+// entity 15
+{
+"classname" "item_health"
+"origin" "48 -208 88"
+}
+// entity 16
+{
+"classname" "item_health"
+"origin" "-104 -192 88"
 }

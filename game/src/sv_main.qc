@@ -17,6 +17,8 @@ void() worldspawn =
 	
 	clientstat(STAT_POWER, EV_FLOAT, jump_hold);
 	clientstat(STAT_CANJUMP, EV_FLOAT, can_jump);
+	globalstat(STAT_DIAMONDS, EV_FLOAT, "diamonds");
+	globalstat(STAT_DIAMONDS_TOTAL, EV_FLOAT, "diamonds_total");
 };
 
 void() SpectatorConnect =

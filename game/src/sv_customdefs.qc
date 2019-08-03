@@ -8,6 +8,10 @@
 .float real_modelindex;
 .float is_dead;
 .float dead_time;
+.float active_jump;
+
+float diamonds;
+float diamonds_total;
 
 const float FL_JUMPRELEASED = 4096;
 

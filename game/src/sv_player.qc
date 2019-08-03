@@ -18,6 +18,8 @@ void() PlayerJump =
 
 void() respawn_to_last_safe =
 {
+	if (self.active_jump == 0) return;
+	
 	self.origin = self.last_safe;
 	self.angles = self.last_safe_angles;
 	self.v_angle = self.last_safe_angles;
@@ -28,6 +30,24 @@ void() respawn_to_last_safe =
 	BeginEvent(EV_REVIVE);
 	multicast('0 0 0', MULTICAST_ONE_R);
 	self.is_dead = FALSE;
+	
+	entity undoent = findfloat(world, active_jump, self.active_jump);
+	while (undoent)
+	{
+		switch (undoent.classname)
+		{
+			case "item_health":
+				undo_diamond(undoent);
+				break;
+			case "func_bricks":
+				undo_bricks(undoent);
+				break;
+			default: break;
+		}
+		undoent = findfloat(undoent, active_jump, self.active_jump);
+	}
+	
+	self.active_jump -= 1;
 };
 
 void() CheckImpulses =
@@ -158,6 +178,7 @@ void() SV_RunClientCommand =
 		// printf("jump: %f %f\n", self.jump_hold, time);
 		if (!input_buttons)
 		{
+			self.active_jump += 1;
 			self.last_safe = self.origin;
 			self.last_safe_angles = input_angles;
 			input_angles_x = max(input_angles_x - 5, -90);
