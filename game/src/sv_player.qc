@@ -56,7 +56,7 @@ void() PlayerPreThink =
 	CheckImpulses();
 	makevectors(self.v_angle);
 
-	if (self.is_dead && time - self.dead_time > 2) respawn_to_last_safe();
+	if (self.is_dead && time - self.dead_time > 1) respawn_to_last_safe();
 	/*
 	if (vlen(to_move_entity) > 0)
 	{
