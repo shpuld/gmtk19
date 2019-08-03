@@ -38,23 +38,23 @@ default
 
 5 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/purple
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	shader textures/dev/test_sky
+	sampleSize 0
 }
 
 6 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purple
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-7 // SURFACE_META V: 5 I: 9 planar
+7 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purple
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-8 // SURFACE_META V: 4 I: 6 planar
+8 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/dev/purple
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
@@ -69,24 +69,24 @@ default
 10 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purple
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 11 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purple
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+12 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purple
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-12 // SURFACE_META V: 5 I: 9 planar
+13 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/dev/purple
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-13 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/red
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
