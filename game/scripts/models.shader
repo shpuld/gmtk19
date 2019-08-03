@@ -32,3 +32,10 @@ arrow_outline
 		nodepthtest
 	}
 }
+
+testblob
+{
+	{
+		map models/testblob
+	}
+}

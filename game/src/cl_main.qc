@@ -8,9 +8,26 @@ void() CSQC_Shutdown =
 {
 };
 
+.float last_yaw;
 float(float isnew) player_listen =
 {
 	if (self.entnum == player_localentnum) localplayer = self;
+	float speed = vlen(self.velocity);
+	self.frame1time = 0;
+	self.angles_y = self.last_yaw;
+	if (speed > 40)
+	{
+		vector velangles = vectoangles(self.velocity);
+		if (velangles_x > 180) velangles_x -= 360;
+		float pitch_factor = min(1, speed / 1600);
+		printf("pitch fac %f, velpitch %f\n", pitch_factor, velangles_x);
+		self.angles_x = velangles_x * pitch_factor;
+		self.angles_y = velangles_y;
+		self.last_yaw = self.angles_y;
+		self.frame2 = 2;
+		self.frame2time = min(frameduration(self.modelindex, 2), speed / 2000);
+		self.lerpfrac = 1;
+	}
 	return 1;
 };
 

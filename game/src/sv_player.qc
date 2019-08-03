@@ -81,9 +81,9 @@ void() PlayerSpawn =
 	setmodel(self, "models/testblob.iqm");
 	self.movetype = MOVETYPE_FLY;
 	self.health = 100;
-	setorigin(self, get_spawn_point());
+	setorigin(self, get_spawn_point() + '0 0 16');
 	self.fixangle = TRUE;
-	setsize(self, [-16, -16, 0], [16, 16, 32]);
+	setsize(self, [-16, -16, -16], [16, 16, 16]);
 	self.view_ofs = [0, 0, 24];
 };
 
