@@ -8,31 +8,31 @@ default
 
 0 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/green
+	shader textures/dev/greentrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 1 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/green
+	shader textures/dev/greentrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 2 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/green
+	shader textures/dev/greentrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 3 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/green
+	shader textures/dev/greentrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 4 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/green
+	shader textures/dev/starttile
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
