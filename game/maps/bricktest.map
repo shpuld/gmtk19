@@ -291,3 +291,8 @@ brushDef
 "classname" "item_haste"
 "origin" "72 -112 88"
 }
+// entity 19
+{
+"classname" "item_flight"
+"origin" "72 -40 88"
+}

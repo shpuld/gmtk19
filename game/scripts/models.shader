@@ -124,3 +124,23 @@ glueoutline
 		map models/glue
 	}
 }
+
+rocket
+{
+	{
+		map models/rocket
+		rgbGen lightingDiffuse
+	}
+	{
+		map models/rocket
+		blendFunc add
+		rgbGen wave sin 0.5 0.2 1 0.2
+	}
+}
+
+rocketoutline
+{
+	{
+		map models/rocket
+	}
+}

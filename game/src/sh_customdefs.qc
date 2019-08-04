@@ -11,6 +11,9 @@ const float EV_DIE = 10;
 const float EV_REVIVE = 11;
 const float EV_GOAL = 12;
 
+const float MAX_GLUE = 5;
+const float MAX_ROCKET = 3;
+
 void() precache_everything =
 {
 	precache_sound("demon/dland2.wav");
@@ -20,6 +23,7 @@ void() precache_everything =
 	precache_model("models/diamond.iqm");
 	precache_model("models/skybox.iqm");
 	precache_model("models/glue.iqm");
+	precache_model("models/rocket.iqm");
 	particleeffectnum("weapons.blob_die");
 	particleeffectnum("weapons.bricks");
 	particleeffectnum("weapons.diamond_pickup");
@@ -44,9 +48,12 @@ vector(vector v, vector n) vector_bounce =
 	return v - (v * n) * n * 1.5;
 };
 
+.vector sticking_to;
 void(float speed, entity blob) handlebounce;
 void(entity pl, float length) custom_physics = 
 {
+	if (pl.sticking_to != '0 0 0') return;
+
 	vector start = pl.origin;
 	vector end = pl.origin + pl.velocity * length;
 	tracebox(start, pl.mins, pl.maxs, end, MOVE_TRIGGERS, pl);

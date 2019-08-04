@@ -7,12 +7,17 @@
 .vector last_safe_angles;
 .float last_safe_sticky_jumps;
 .float last_safe_rocket_jumps;
+.vector last_safe_sticking_to;
 .float real_modelindex;
 .float is_dead;
 .float dead_time;
 .float active_jump;
 .float sticky_jumps;
 .float rocket_jumps;
+.float jump_flags;
+const float JF_ROCKET = 1;
+const float JF_STICKY = 2;
+// .vector sticking_to; in sh
 
 float diamonds;
 float diamonds_total;

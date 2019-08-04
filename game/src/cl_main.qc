@@ -30,6 +30,7 @@ void() draw_trajectory =
 	self.trajectorydot.origin = self.origin; // trace_endpos;
 	self.trajectorydot.angles = camang;
 	self.trajectorydot.angles_x = max(self.trajectorydot.angles_x - 5, -90);
+	self.trajectorydot.sticking_to = '0 0 0';
 	makevectors(self.trajectorydot.angles);
 	self.trajectorydot.velocity = v_forward * (250 + power * 1800);
 	vector oldorg;

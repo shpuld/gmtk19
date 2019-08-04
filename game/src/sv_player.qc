@@ -27,6 +27,7 @@ void() respawn_to_last_safe =
 	self.rocket_jumps = self.last_safe_rocket_jumps;
 	self.fixangle = TRUE;
 	self.velocity = '0 0 0';
+	self.sticking_to = self.last_safe_sticking_to;
 	
 	msg_entity = self;
 	BeginEvent(EV_REVIVE);
@@ -46,6 +47,9 @@ void() respawn_to_last_safe =
 				break;
 			case "item_haste":
 				undo_glue(undoent);
+				break;
+			case "item_flight":
+				undo_glue(undoent); //rocket can reuse same code
 				break;
 			default: break;
 		}
@@ -178,6 +182,21 @@ void(float speed, entity blob) handlebounce =
 	
 	if (speed > 350)
 		pointparticles(particleeffectnum("weapons.blob_bounce"), blob.origin, '0 0 1', 1);
+		
+	if (self.sticky_jumps > 0 && self.jump_flags & JF_STICKY)
+	{
+		self.sticking_to = blob.origin;
+		self.velocity = '0 0 0';
+		self.sticky_jumps -= 1;
+		self.jump_flags -= self.jump_flags & JF_STICKY;
+	}	
+	if (self.rocket_jumps > 0 && self.jump_flags & JF_ROCKET)
+	{
+		// massive dampening to make rocket jumps more controllable
+		self.velocity *= 0.5;
+		self.rocket_jumps -= 1;
+		self.jump_flags -= self.jump_flags & JF_ROCKET;
+	}
 };
 
 void() SV_RunClientCommand =
@@ -195,19 +214,32 @@ void() SV_RunClientCommand =
 			self.active_jump += 1;
 			self.last_safe = self.origin;
 			self.last_safe_angles = input_angles;
+			self.last_safe_sticky_jumps = self.sticky_jumps;
+			self.last_safe_rocket_jumps = self.rocket_jumps;
+			self.last_safe_sticking_to = self.sticking_to;
+			
+			self.sticking_to = '0 0 0'; // disconnect glue for jump
+			
 			input_angles_x = max(input_angles_x - 5, -90);
 			makevectors(input_angles);
 			// tracebox(self.origin, self.mins, self.maxs, self.origin + '0 0 8', 0, self);
-			// setorigin(self, trace_endpos);
+			// setorigin(self, trace_endpos);	
 			self.velocity = v_forward * (250 + self.jump_hold * 1800);
 			sound(self, CHAN_AUTO, "sounds/blobjump.wav", 0.5 + (self.jump_hold * 0.5), 0, 110 - (self.jump_hold * 25));
 			self.jump_hold = 0;
+			
+			self.jump_flags = 0;
+			if (self.rocket_jumps > 0) self.jump_flags |= JF_ROCKET;
+			if (self.sticky_jumps > 0) self.jump_flags |= JF_STICKY;
 		}
 	}
 	if (input_buttons && self.can_jump)
 	{
 		self.jump_hold += input_timelength * 0.8;
-		self.jump_hold = min(0.8, self.jump_hold);	
+		if (self.rocket_jumps > 0)
+			self.jump_hold = min(2.0, self.jump_hold);
+		else
+			self.jump_hold = min(0.8, self.jump_hold);	
 	}
 	if (speed < 30*60*input_timelength)
 	{

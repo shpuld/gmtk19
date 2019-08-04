@@ -127,7 +127,7 @@ void() glue_touch =
 	self.active_jump = other.active_jump;
 	self.modelindex = 0;
 	sound(other, CHAN_AUTO, "sounds/diamondpickup2.wav", 0.5, 0, 50);
-	other.sticky_jumps = 5;
+	other.sticky_jumps = MAX_GLUE;
 };
 
 void() item_haste =
@@ -140,4 +140,24 @@ void() item_haste =
 	self.solid = SOLID_TRIGGER;
 	self.flags |= FL_FINDABLE_NONSOLID;
 	self.touch = glue_touch;
+};
+
+void() rocket_touch =
+{
+	if (other.classname != "player" || self.modelindex == 0) return;
+	self.active_jump = other.active_jump;
+	self.modelindex = 0;
+	sound(other, CHAN_AUTO, "sounds/diamondpickup2.wav", 0.5, 0, 50);
+	other.rocket_jumps = MAX_ROCKET;
+};
+
+void() item_flight =
+{
+	setmodel(self, "models/rocket.iqm");
+	self.real_modelindex = self.modelindex;
+	self.modelflags |= MF_ROTATE;
+	setsize(self, '-24 -24 -24', '24 24 24');
+	self.solid = SOLID_TRIGGER;
+	self.flags |= FL_FINDABLE_NONSOLID;
+	self.touch = rocket_touch;
 };
