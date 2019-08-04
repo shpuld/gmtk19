@@ -8,7 +8,7 @@ default
 
 0 // SURFACE_META V: 4 I: 6 
 {
-	shader textures/dev/greentrim
+	shader textures/dev/starttile
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
@@ -32,7 +32,7 @@ default
 
 4 // SURFACE_META V: 4 I: 6 
 {
-	shader textures/dev/starttile
+	shader textures/dev/greentrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
@@ -234,16 +234,16 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-38 // SURFACE_META V: 12 I: 30 planar
-{
-	shader textures/dev/bluecliff
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-39 // SURFACE_META V: 5 I: 9 planar
+38 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/dev/bluecliff
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+39 // SURFACE_META V: 12 I: 30 planar
+{
+	shader textures/dev/bluecliff
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 40 // SURFACE_META V: 6 I: 12 planar
@@ -330,7 +330,7 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-54 // SURFACE_META V: 12 I: 36 planar
+54 // SURFACE_META V: 10 I: 30 planar
 {
 	shader textures/dev/whitetile
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
@@ -414,7 +414,7 @@ default
 	sampleSize 0
 }
 
-68 // SURFACE_META V: 20 I: 36 planar
+68 // SURFACE_META V: 16 I: 30 planar
 {
 	shader textures/dev/purple
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
@@ -423,58 +423,34 @@ default
 69 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purple
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 70 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/purple
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	shader textures/dev/goal
+	sampleSize 0
 }
 
 71 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/purple
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	shader textures/dev/goal
+	sampleSize 0
 }
 
-72 // SURFACE_META V: 4 I: 6 planar
+72 // SURFACE_META V: 4 I: 6 
 {
-	shader textures/dev/purple
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	shader textures/dev/goal
+	sampleSize 0
 }
 
 73 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/purple
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	shader textures/dev/goal
+	sampleSize 0
 }
 
 74 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/goal
-	sampleSize 0
-}
-
-75 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/goal
-	sampleSize 0
-}
-
-76 // SURFACE_META V: 4 I: 6 
-{
-	shader textures/dev/goal
-	sampleSize 0
-}
-
-77 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/goal
-	sampleSize 0
-}
-
-78 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/goal
 	sampleSize 0
