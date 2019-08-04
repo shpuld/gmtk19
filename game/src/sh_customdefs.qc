@@ -39,6 +39,7 @@ void() precache_everything =
 	precache_sound("sounds/splatbig2.wav");
 	precache_sound("sounds/blobjump.wav");
 	precache_sound("sounds/diamondpickup2.wav");
+	precache_sound("sounds/brickexplode.wav");
 };
 
 

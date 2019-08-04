@@ -319,7 +319,7 @@ tutorial tutorials[] = {
 	{ "goo02", "Hotkeys", "You can use Z to undo your last", "move (strokes will still remain).", "You can use R to restart", "the stage and the strokes.", "You can reach better ranks", "with less strokes in total." },
 	{ "sticky_tut", "Glue Powerup", "There's the Glue Powerup!", "", "With the Glue Powerup,", "you will stick to walls.", "Glue is useful for", "avoiding falling off." },
 	{ "rocket_tut", "Rocket Powerup", "That's the Rocket Powerup!", "", "Rocket lets you charge much", "more than normally.", "With it, it's possible to", "reach far away places!" },
-	{ "goo08", "Brick Walls", "You can ram into brick walls", "to break them!", "Remember that undo will", "bring them back.", "You'll have to land safely", "to clear the wall." }
+	{ "goo08", "Brick Walls", "You can ram into brick walls", "to break them!", "Remember that a reset will", "bring them back.", "You'll have to land safely", "to clear the wall." }
 };
 
 void() m_close;
