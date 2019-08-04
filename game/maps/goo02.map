@@ -3,6 +3,7 @@
 {
 "classname" "worldspawn"
 "ambient" "10"
+"par" "3"
 // brush 0
 {
 brushDef
