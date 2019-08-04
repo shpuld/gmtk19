@@ -130,6 +130,16 @@ noref void(float apiver, string enginename, float enginever) CSQC_Init =
 
 noref void() CSQC_WorldLoaded =
 {
+	if (cvar_string("mapname") == "menu")
+	{
+		cvar_set("chase_back", "230");
+		localcmd("music 1\n");
+	}
+	else
+	{
+		cvar_set("chase_back", "160");
+		localcmd("music 2\n");
+	}
 };
 
 noref void(float isnew) CSQC_Ent_Update =
@@ -144,7 +154,6 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 	clearscene();
 	g_width = width;
 	g_height = height;
-	
 
 	//disable quake status bar and quake crosshair
 	setproperty(VF_DRAWENGINESBAR, 0);	
@@ -158,7 +167,7 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 	
 	float can_jump = getstatf(STAT_CANJUMP);
 	float jump_power = getstatf(STAT_POWER);
-	if (can_jump)
+	if (can_jump && cvar_string("mapname") != "menu")
 	{
 		makevectors(camang);
 		vector rgt = 16 * v_right;
@@ -185,7 +194,18 @@ void(float width, float height, float menushown) CSQC_UpdateView =
 	addentity(skymodel);
 	renderscene();
 	
-	draw_hud();
+	if (cvar_string("mapname") != "menu")
+		draw_hud();
+	else
+	{
+		string prompt = "Press ESCAPE!";
+		drawstring([g_width/2 - strlen(prompt)*0.5*24, g_height - 64] + [sin(time*2)*3, cos(time*2)*3], prompt, [24, 24], '0 0 0', 0.7, 0);
+		drawstring([g_width/2 - strlen(prompt)*0.5*24, g_height - 64], prompt, [24, 24], '1 1 1', 1, 0);
+		
+		prompt = "Shoot Your Goo!";
+		drawstring([g_width/2 - strlen(prompt)*0.5*24, 64] + [sin(-time*2)*3, cos(time*2)*3], prompt, [24, 24], '0 0 0', 0.7, 0);
+		drawstring([g_width/2 - strlen(prompt)*0.5*24, 64], prompt, [24, 24], '1 1 1', 1, 0);
+	}
 	
 	/*sui_pre_draw(g_width, g_height);
 	

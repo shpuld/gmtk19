@@ -6,6 +6,8 @@ const float STAT_POWER = 51;
 const float STAT_CANJUMP = 52;
 const float STAT_DIAMONDS_TOTAL = 53;
 const float STAT_DIAMONDS = 54;
+const float STAT_STROKES = 55;
+const float STAT_PAR = 56;
 
 const float EV_DIE = 10;
 const float EV_REVIVE = 11;

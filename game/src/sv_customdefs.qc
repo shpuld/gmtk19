@@ -17,10 +17,13 @@
 .float jump_flags;
 const float JF_ROCKET = 1;
 const float JF_STICKY = 2;
-// .vector sticking_to; in sh
+// .vector sticking_to; in sh_customdefs.qc
 
 float diamonds;
 float diamonds_total;
+float strokes;
+.float par;
+float par_g;
 
 const float FL_JUMPRELEASED = 4096;
 

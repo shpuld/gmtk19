@@ -132,6 +132,7 @@ void() PlayerSpawn =
 	self.fixangle = TRUE;
 	setsize(self, [-16, -16, -16], [16, 16, 16]);
 	self.view_ofs = [0, 0, 24];
+	strokes = 0;
 };
 
 void() PutClientInServer =
@@ -206,6 +207,14 @@ void() SV_RunClientCommand =
 {
 	input_movevalues = '0 0 0';
 	input_buttons -= input_buttons & 2;
+	if (world.model == "maps/menu.bsp")
+	{
+		input_angles = [sin(time * 0.3) * 10, anglemod(time*5 + 120), 0];
+		self.angles = input_angles;
+		self.v_angle = input_angles;
+		self.fixangle = TRUE;
+		input_buttons = 0;
+	}
 	float speed = vlen(self.velocity);
 	//printf("speed %v\n", self.velocity);
 	if (self.is_dead) return;
@@ -214,6 +223,7 @@ void() SV_RunClientCommand =
 		// printf("jump: %f %f\n", self.jump_hold, time);
 		if (!input_buttons)
 		{
+			strokes++;
 			self.active_jump += 1;
 			self.last_safe = self.origin;
 			self.last_safe_angles = input_angles;

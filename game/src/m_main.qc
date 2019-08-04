@@ -5,6 +5,8 @@ float splash_time;
 
 void() m_init =
 {
+	if (cvar_string("mapname") == "")
+		localcmd("map menu\n");
 	splash_time = time + 2.5;
 	registercommand("togglemenu2");
 	// drawfont = loadfont("", "Courier Prime Code", "12,16,24,32,48,64,72,128,256,512", -1, 0, 0);

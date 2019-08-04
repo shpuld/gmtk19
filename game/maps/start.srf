@@ -495,73 +495,73 @@ default
 81 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/sandblock
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 82 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/sandblock
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-83 // SURFACE_META V: 7 I: 15 planar
-{
-	shader textures/dev/whitetile
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-84 // SURFACE_META V: 8 I: 21 planar
+83 // SURFACE_META V: 8 I: 21 planar
 {
 	shader textures/dev/whitetile
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-85 // SURFACE_META V: 3 I: 3 planar
-{
-	shader textures/dev/whitetile
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-86 // SURFACE_META V: 4 I: 6 planar
+84 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/whitetile
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-87 // SURFACE_META V: 5 I: 9 planar
-{
-	shader textures/dev/whitetile
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-88 // SURFACE_META V: 5 I: 9 planar
+85 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/dev/whitetile
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-89 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/whitetile
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-90 // SURFACE_META V: 3 I: 3 planar
-{
-	shader textures/dev/whitetile
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
-}
-
-91 // SURFACE_META V: 3 I: 3 planar
+86 // SURFACE_META V: 3 I: 3 planar
 {
 	shader textures/dev/whitetile
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+87 // SURFACE_META V: 3 I: 3 planar
+{
+	shader textures/dev/whitetile
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+88 // SURFACE_META V: 7 I: 15 planar
+{
+	shader textures/dev/checker
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+89 // SURFACE_META V: 3 I: 3 planar
+{
+	shader textures/dev/checker
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+90 // SURFACE_META V: 5 I: 9 planar
+{
+	shader textures/dev/checker
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+91 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/checker
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 92 // SURFACE_META V: 3 I: 3 planar
 {
-	shader textures/dev/whitetile
-	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+	shader textures/dev/checker
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 93 // SURFACE_META V: 4 I: 6 planar
