@@ -39,3 +39,12 @@ vector() readvector =
 };
 
 void(float speed, entity blob) handlebounce = {};
+
+vector(float power) color_for_power = 
+{
+	float powerfrac = power / 0.8;
+	if (powerfrac < 1)
+		return '0.05 1 0.05' * (1.0 - powerfrac) + '1 0.05 0.05' * powerfrac;
+	else
+		return '1 0.05 0.05' * ((2.0 - powerfrac) / 1.5) + '0.9 0.9 0.5' * (powerfrac - 1.0);
+};

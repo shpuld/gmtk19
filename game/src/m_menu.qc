@@ -363,7 +363,7 @@ void() tutorial_menu =
 	sui_text([xpos, ypos], MENU_TEXT_SMALL, tutorials[i].line6, MENU_TEXT_1, 1, 0);
 	
 	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_END]);
-	if (my_button("tut_close", [-8, -8], [80, 20], "OK"))
+	if (my_button("tut_close", [0, -8], [80, 20], "OK"))
 	{
 		current_menu = MENU_MAIN;
 		m_close();
