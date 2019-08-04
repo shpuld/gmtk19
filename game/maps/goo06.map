@@ -1427,38 +1427,34 @@ brushDef
 ( 2656 -880 864 ) ( 2656 -800 864 ) ( 2656 -880 880 ) ( ( 0.015625 0 -0.75 ) ( 0 0.015625 -0.75 ) ) dev/checker 0 0 0
 }
 }
-}
-// entity 1
-{
-"classname" "func_bricks"
-// brush 0
+// brush 118
 {
 brushDef
 {
-( -576 912 992 ) ( -576 848 992 ) ( -672 912 992 ) ( ( 0.015625 0 0.25 ) ( 0 0.015625 0 ) ) dev/bricks 0 0 0
-( -576 912 928 ) ( -672 912 928 ) ( -576 912 896 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/bricks 0 0 0
-( -416 912 928 ) ( -416 912 896 ) ( -416 848 928 ) ( ( 0.015625 0 0.25 ) ( 0 0.015625 0 ) ) dev/bricks 0 0 0
-( -672 848 768 ) ( -576 848 768 ) ( -672 912 768 ) ( ( 0.015625 0 0.25 ) ( 0 0.015625 0 ) ) dev/bricks 0 0 0
-( -672 848 896 ) ( -672 848 928 ) ( -576 848 896 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/bricks 0 0 0
-( -736 848 896 ) ( -736 912 896 ) ( -736 848 928 ) ( ( 0.015625 0 -0.25 ) ( 0 0.015625 0 ) ) dev/bricks 0 0 0
+( -576 912 992 ) ( -576 848 992 ) ( -672 912 992 ) ( ( 0.015625 0 0.25 ) ( 0 0.015625 0 ) ) dev/checker 0 0 0
+( -576 912 928 ) ( -672 912 928 ) ( -576 912 896 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/checker 0 0 0
+( -416 912 928 ) ( -416 912 896 ) ( -416 848 928 ) ( ( 0.015625 0 0.25 ) ( 0 0.015625 0 ) ) dev/checker 0 0 0
+( -672 848 768 ) ( -576 848 768 ) ( -672 912 768 ) ( ( 0.015625 0 0.25 ) ( 0 0.015625 0 ) ) dev/checker 0 0 0
+( -672 848 896 ) ( -672 848 928 ) ( -576 848 896 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/checker 0 0 0
+( -736 848 896 ) ( -736 912 896 ) ( -736 848 928 ) ( ( 0.015625 0 -0.25 ) ( 0 0.015625 0 ) ) dev/checker 0 0 0
 }
 }
 }
-// entity 2
+// entity 1
 {
 "classname" "misc_model"
 "origin" "-352 -224 512"
 "model" "models/modelstarthill.ase"
 "spawnflags" "6"
 }
-// entity 3
+// entity 2
 {
 "classname" "misc_model"
 "origin" "-1024 -32 528"
 "model" "models/modelgoal.ase"
 "spawnflags" "6"
 }
-// entity 4
+// entity 3
 {
 "classname" "trigger_goal"
 // brush 0
@@ -1474,49 +1470,49 @@ brushDef
 }
 }
 }
-// entity 5
+// entity 4
 {
 "classname" "item_health"
 "origin" "1276 1240 736"
 }
-// entity 6
+// entity 5
 {
 "classname" "item_flight"
 "origin" "128 -160 528"
 }
-// entity 7
+// entity 6
 {
 "classname" "item_health"
 "origin" "928 -1280 720"
 }
-// entity 8
+// entity 7
 {
 "classname" "info_player_start"
 "origin" "-288 -160 576"
 }
-// entity 9
+// entity 8
 {
 "classname" "item_haste"
 "origin" "1504 -1280 720"
 }
-// entity 10
+// entity 9
 {
 "classname" "item_haste"
 "origin" "1820 964 720"
 }
-// entity 11
+// entity 10
 {
 "classname" "light"
 "origin" "-544 768 880"
 "light" "50"
 }
-// entity 12
+// entity 11
 {
 "classname" "light"
 "origin" "2544 -800 976"
 "light" "100"
 }
-// entity 13
+// entity 12
 {
 "classname" "light"
 "origin" "2544 384 976"
