@@ -429,6 +429,8 @@ void() main_menu =
 {
 	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_START]);
 	sui_text([0, 64], MENU_TEXT_LARGE, "Shoot Your Goo!", [1, 1, 1], 1, 0);
+	sui_text([0, 64 + 48], MENU_TEXT_SMALL, "GMTK Game Jam 2019 Entry", [1, 1, 1], 1, 0);
+	sui_text([0, 64 + 48 + 16], MENU_TEXT_SMALL, "by shp & Leonovsky75", [1, 1, 1], 1, 0);
 	
 	vector pos = [0, -24];
 	vector size = [120, 140];

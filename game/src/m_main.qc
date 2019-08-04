@@ -11,7 +11,7 @@ void() m_init =
 	great_thinker = spawn();
 	if (cvar_string("mapname") == "")
 		localcmd("map menu\n");
-	splash_time = time + 2.5;
+	splash_time = time + 4.0;
 	registercommand("togglemenu2");
 	registercommand("nextlevel");
 	registercommand("showtutorial");
@@ -20,7 +20,7 @@ void() m_init =
 	current_menu = MENU_MAIN;
 };
 
-vector() randomofs = { return [random() - 0.5, random() - 0.5] * 2; };
+vector() randomofs = { return [random() - 0.5, random() - 0.5] * 1.2; };
 
 void(vector screensize) m_draw =
 {
@@ -110,7 +110,6 @@ void(float currentstrokes, float currentpar) prompt_next_level;
 float(string cmd) m_consolecommand =
 {
 	tokenize(cmd);
-	printf("cmd %s\n", cmd);
 	switch (argv(0))
 	{
 	case "nextlevel":
