@@ -2,6 +2,7 @@
 // entity 0
 {
 "classname" "worldspawn"
+"par" "4"
 // brush 0
 {
 brushDef

@@ -220,6 +220,7 @@ brushDef
 {
 "classname" "info_player_start"
 "origin" "0 0 -8"
+"angle" "90"
 }
 // entity 3
 {

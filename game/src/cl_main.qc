@@ -130,6 +130,7 @@ noref void(float apiver, string enginename, float enginever) CSQC_Init =
 
 noref void() CSQC_WorldLoaded =
 {
+	mapmsgtime = 5;
 	if (cvar_string("mapname") == "menu")
 	{
 		cvar_set("chase_back", "230");

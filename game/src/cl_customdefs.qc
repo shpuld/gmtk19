@@ -8,6 +8,8 @@ float g_width, g_height; /* Globals for screen width and height */
 float in_menu; //what menu are we in
 float time_in_menu;
 
+float mapmsgtime;
+
 // for keybinding
 float active_bind_index;
 float menu_click_held;

@@ -37,7 +37,7 @@ void() bricks_break =
 {
 	self.modelindex = 0;
 	self.solid = SOLID_NOT;
-	sound(self, CHAN_AUTO, "sounds/brickexplode.wav", 1, 0.5, 96 + random() * 8);
+	sound(other, CHAN_AUTO, "sounds/brickexplode.wav", 1, 0, 96 + random() * 8);
 };
 
 void() bricks_touch =

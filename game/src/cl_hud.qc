@@ -88,4 +88,11 @@ void() draw_hud =
 			localcmd(sprintf("nextlevel %.0f %.0f\n", getstatf(STAT_STROKES), getstatf(STAT_PAR)));
 		}
 	}
+	
+	if (mapmsgtime > 0)
+	{
+		string mpname = get_map_name(cvar_string("mapname"));
+		drawstring([g_width/2 - strlen(mpname)*txtsize*0.5, 72 + 8], mpname, [txtsize, txtsize], '1 1 1', min(1.0, mapmsgtime), 0);
+		mapmsgtime -= frametime;
+	}
 };
