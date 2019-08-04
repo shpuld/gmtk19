@@ -72,12 +72,15 @@ void() CheckImpulses =
 	self.impulse = 0;
 };
 
-vector() get_spawn_point =
+void(entity pl) set_spawn_point =
 {
 	entity spawnpoint = world;
 	spawnpoint = find(spawnpoint, classname, "info_player_start");
 
-	return spawnpoint.origin + '0 0 1';
+	setorigin(pl, spawnpoint.origin);
+	pl.angles = spawnpoint.angles;
+	pl.v_angle = spawnpoint.angles;
+	pl.fixangle = TRUE;
 };
 
 .vector velocity_stuck_array[4];
@@ -130,7 +133,8 @@ void() PlayerSpawn =
 	self.real_modelindex = self.modelindex;
 	self.movetype = MOVETYPE_FLY;
 	self.health = 100;
-	setorigin(self, get_spawn_point() + '0 0 16');
+	set_spawn_point(self);
+	setorigin(self, self.origin + '0 0 16');
 	self.fixangle = TRUE;
 	setsize(self, [-16, -16, -16], [16, 16, 16]);
 	self.view_ofs = [0, 0, 24];
@@ -193,14 +197,14 @@ void(float speed, entity blob) handlebounce =
 	{
 		self.sticking_to = blob.origin;
 		self.velocity = '0 0 0';
-		self.sticky_jumps -= 1;
+		// infinite powerups, self.sticky_jumps -= 1;
 		self.jump_flags -= self.jump_flags & JF_STICKY;
 	}	
 	if (self.rocket_jumps > 0 && self.jump_flags & JF_ROCKET)
 	{
 		// massive dampening to make rocket jumps more controllable
-		self.velocity *= 0.5;
-		self.rocket_jumps -= 1;
+		// nevermind, self.velocity *= 0.5;
+		// infinite powerups, self.rocket_jumps -= 1;
 		self.jump_flags -= self.jump_flags & JF_ROCKET;
 	}
 };

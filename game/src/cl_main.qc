@@ -138,6 +138,7 @@ noref void() CSQC_WorldLoaded =
 	else
 	{
 		cvar_set("chase_back", "160");
+		localcmd("showtutorial\n");
 		// localcmd("music 2\n");
 	}
 };

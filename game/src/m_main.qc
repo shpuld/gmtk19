@@ -3,20 +3,18 @@ float menu_active;
 
 float splash_time;
 
-float current_menu;
-const float MENU_MAIN = 1;
-const float MENU_SETTINGS = 2;
-const float MENU_HELP = 3;
-const float MENU_NEWGAME = 4;
-const float MENU_NEXTLEVEL = 5;
+
+entity great_thinker;
 
 void() m_init =
 {
+	great_thinker = spawn();
 	if (cvar_string("mapname") == "")
 		localcmd("map menu\n");
 	splash_time = time + 2.5;
 	registercommand("togglemenu2");
 	registercommand("nextlevel");
+	registercommand("showtutorial");
 	// drawfont = loadfont("", "Courier Prime Code", "12,16,24,32,48,64,72,128,256,512", -1, 0, 0);
 	setcursormode(TRUE,"gfx/xhair", [16, 16], cvar("vid_conautoscale"));
 	current_menu = MENU_MAIN;
@@ -71,6 +69,7 @@ void(vector screensize) m_draw =
 void() m_close =
 {
 	if (current_menu == MENU_NEXTLEVEL) return;
+	if (current_menu == MENU_TUTORIAL) current_menu = MENU_MAIN;
 	
 	setkeydest(0);
 	menu_active = FALSE;
@@ -101,6 +100,12 @@ float(float evtype, float scanx, float chary, float devid) Menu_InputEvent =
 	return FALSE;
 };
 
+void() great_think =
+{
+	current_menu = MENU_TUTORIAL;
+	m_open();
+};
+
 void(float currentstrokes, float currentpar) prompt_next_level;
 float(string cmd) m_consolecommand =
 {
@@ -110,6 +115,13 @@ float(string cmd) m_consolecommand =
 	{
 	case "nextlevel":
 		prompt_next_level(stof(argv(1)), stof(argv(2)));
+		m_open();
+		return TRUE;
+		break;
+	case "showtutorial":
+		if (current_tutorial == cvar_string("mapname")) return TRUE;
+		current_menu = MENU_TUTORIAL;
+		current_tutorial = cvar_string("mapname");
 		m_open();
 		return TRUE;
 		break;

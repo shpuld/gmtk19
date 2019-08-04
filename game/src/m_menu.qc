@@ -149,12 +149,16 @@ void(string id, vector pos, vector size, __inout vector scrollofs) bind_list =
 	sui_list_view_end();	
 };
 
+
 float current_menu;
+string current_tutorial;
 const float MENU_MAIN = 1;
 const float MENU_SETTINGS = 2;
 const float MENU_HELP = 3;
 const float MENU_NEWGAME = 4;
 const float MENU_NEXTLEVEL = 5;
+const float MENU_TUTORIAL = 6;
+
 
 vector binds_scroll;
 void() settings_menu =
@@ -299,6 +303,75 @@ void(float currentstrokes, float currentpar) prompt_next_level =
 	par = currentpar;
 };
 
+struct tutorial {
+	string map;
+	string title;
+	string line1;
+	string line2;
+	string line3;
+	string line4;
+	string line5;
+	string line6;
+};
+
+tutorial tutorials[] = {
+	{ "start", "Welcome!", "Use MOUSE1 to shoot the goo,", "hold it to shoot it further.", "Collect diamonds and avoid", "falling off the level.", "Get to the GOAL after", "collecting all of them." },
+	{ "goo02", "Hotkeys", "You can use Z to undo your last", "move (strokes will still remain).", "You can use R to restart", "the stage and the strokes.", "You can reach better ranks", "with less strokes in total." },
+	{ "sticky_tut", "Glue Powerup", "There's the Glue Powerup!", "", "With the Glue Powerup,", "you will stick to walls.", "Glue is useful for", "avoiding falling off." },
+	{ "rocket_tut", "Rocket Powerup", "That's the Rocket Powerup!", "Rocket lets you charge", "more than normally,", "making it possible to", "reach far away places!" }
+};
+
+void() m_close;
+void() tutorial_menu =
+{
+	string currentmap = current_tutorial;
+	int i;
+	for (i = 0; i < tutorials.length; i++)
+	{
+		if (tutorials[i].map == currentmap) break;
+	}
+	if (i >= tutorials.length)
+	{
+		current_menu = MENU_MAIN;
+		m_close();
+		return;
+	}
+	
+	vector pos = [0, 0];
+	vector size = [280, 160];
+	
+	sui_push_frame(pos, size);
+
+	sui_fill([0, 0], size, MENU_BG, 0.75, 0);
+	sui_border_box([0, 0], size, 2, MENU_BORDER, 0.3, 0);
+	
+	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_START]);
+	sui_text([0, 4], MENU_TEXT_MEDIUM, tutorials[i].title, MENU_TEXT_1, 1, 0);
+	
+	float xpos = 0;
+	float ypos = 32;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, tutorials[i].line1, MENU_TEXT_1, 1, 0);
+	ypos += 8;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, tutorials[i].line2, MENU_TEXT_1, 1, 0);
+	ypos += 16;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, tutorials[i].line3, MENU_TEXT_1, 1, 0);
+	ypos += 8;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, tutorials[i].line4, MENU_TEXT_1, 1, 0);
+	ypos += 16;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, tutorials[i].line5, MENU_TEXT_1, 1, 0);
+	ypos += 8;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, tutorials[i].line6, MENU_TEXT_1, 1, 0);
+	
+	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_END]);
+	if (my_button("tut_close", [-8, -8], [80, 20], "OK"))
+	{
+		current_menu = MENU_MAIN;
+		m_close();
+	}
+
+	sui_pop_frame();	
+};
+
 void() next_level_menu =
 {
 	vector pos = [0, 0];
@@ -395,6 +468,7 @@ void(vector size) root_menu =
 		case MENU_HELP: help_menu(); break;
 		case MENU_NEWGAME: new_game_menu(); break;
 		case MENU_NEXTLEVEL: next_level_menu(); break;
+		case MENU_TUTORIAL: tutorial_menu(); break;
 		default: break;
 	}
 };
