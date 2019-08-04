@@ -7,17 +7,19 @@ struct map_list_item {
 map_list_item map_list[] = 
 {
 	{ "start", "Introduction" },
-	{ "goo02", "Goo 2" },
+	{ "goo02", "Pit" },
 	{ "smap", "Snake" },
 	{ "sticky_tut", "Sticky" },
 	{ "forest", "Forest" },
+	{ "goo05", "Pentagoo" },
 	{ "rocket_tut", "Target Practice" },
-	{ "goo01", "Goo 1" },
-	{ "goo03", "Goo 3" },
+	{ "goo01", "Isla Rock" },
+	{ "goo03", "Tower" },
 	{ "climb", "Climb" },
-	{ "goo04", "Goo 4" },
-	{ "goo05", "Goo 5" },
-	{ "goo06", "Goo 6" }
+	{ "goo08", "Deconstruction" }
+	{ "goo04", "Billboards" },
+	{ "goo06", "Smile Mountain" },
+	{ "goo07", "Frown Canyon" }
 };
 
 string(string mapfile) get_map_name =
