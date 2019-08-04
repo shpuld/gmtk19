@@ -417,5 +417,5 @@ brushDef
 // entity 6
 {
 "classname" "item_health"
-"origin" "1120 -544 384"
+"origin" "1120 -544 352"
 }
