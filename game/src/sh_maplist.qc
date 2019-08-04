@@ -9,11 +9,13 @@ map_list_item map_list[] =
 	{ "start", "Introduction" },
 	{ "goo02", "Goo 2" },
 	{ "smap", "Snake" },
+	{ "sticky_tut", "Sticky" },
 	{ "goo01", "Goo 1" },
 	{ "goo03", "Goo 3" },
+	{ "climb", "Climb" },
 	{ "goo04", "Goo 4" },
 	{ "goo05", "Goo 5" },
-	{ "climb", "Climb" }
+	{ "goo06", "Goo 6" }
 };
 
 string(string mapfile) get_map_name =
