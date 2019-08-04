@@ -25,6 +25,16 @@ void() draw_hud =
 		drawstring([dm_size_x, (dm_size_y - dm_text_size_y) / 2 - 4], diamonds_str, dm_text_size, '1 1 1', 0.8, 0);
 	}
 	
+	float rocket_jumps = getstatf(STAT_ROCKET_JUMPS);
+	float sticky_jumps = getstatf(STAT_STICKY_JUMPS);
+	float two_pus = FALSE;
+	if (rocket_jumps > 0 && sticky_jumps > 0) two_pus = TRUE;
+	
+	if (rocket_jumps)
+		drawpic([g_width/2 - (two_pus ? dm_size_x : dm_size_x*0.5), -4], "textures/rocket_icon", dm_size, '1 1 1', 0.9);
+	if (sticky_jumps)
+		drawpic([g_width/2 - (two_pus ? 0 : dm_size_x*0.5), -4], "textures/glue_icon", dm_size, '1 1 1', 0.9);
+	
 	// strokes
 	vector small_text_size = [12, 12];
 	string num_strokes = sprintf("%.0f", getstatf(STAT_STROKES));

@@ -19,6 +19,8 @@ void() worldspawn =
 	
 	clientstat(STAT_POWER, EV_FLOAT, jump_hold);
 	clientstat(STAT_CANJUMP, EV_FLOAT, can_jump);
+	clientstat(STAT_ROCKET_JUMPS, EV_FLOAT, rocket_jumps);
+	clientstat(STAT_STICKY_JUMPS, EV_FLOAT, sticky_jumps);
 	globalstat(STAT_DIAMONDS, EV_FLOAT, "diamonds");
 	globalstat(STAT_DIAMONDS_TOTAL, EV_FLOAT, "diamonds_total");
 	globalstat(STAT_STROKES, EV_FLOAT, "strokes");
