@@ -49,7 +49,7 @@ brushDef
 ( 896 0 64 ) ( 896 0 -64 ) ( 896 -256 64 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/bluecliff 0 0 0
 ( 480 -256 32 ) ( 736 -256 32 ) ( 480 0 32 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/purple 0 0 0
 ( 480 -192 -64 ) ( 480 -192 64 ) ( 736 -192 -64 ) ( ( 0.015625 0 -0 ) ( 0 0.015625 0 ) ) dev/purple 0 0 0
-( 832 -256 -64 ) ( 832 0 -64 ) ( 832 -256 64 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/purple 0 0 0
+( 704 -256 -64 ) ( 704 0 -64 ) ( 704 -256 64 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/purple 0 0 0
 }
 }
 // brush 4
@@ -81,7 +81,7 @@ brushDef
 brushDef
 {
 ( 864 64 96 ) ( 608 64 96 ) ( 864 320 96 ) ( ( 0.015625 0 -0 ) ( -0 0.015625 0 ) ) dev/whitetile 0 0 0
-( 832 64 64 ) ( 832 320 64 ) ( 832 64 -64 ) ( ( 0.015625 0 -0 ) ( 0 0.015625 0 ) ) dev/purple 0 0 0
+( 704 64 64 ) ( 704 320 64 ) ( 704 64 -64 ) ( ( 0.015625 0 -0 ) ( 0 0.015625 0 ) ) dev/purple 0 0 0
 ( 864 -64 64 ) ( 864 -64 -64 ) ( 608 -64 64 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/purple 0 0 0
 ( 608 320 32 ) ( 608 64 32 ) ( 864 320 32 ) ( ( 0 -0.015625 0 ) ( 0.015625 0 -0 ) ) dev/purple 0 0 0
 ( 640 320 -64 ) ( 640 320 64 ) ( 640 64 -64 ) ( ( 0.015625 0 0 ) ( 0 0.015625 0 ) ) dev/bluecliff 0 0 0
@@ -377,17 +377,10 @@ brushDef
 // entity 1
 {
 "classname" "info_player_start"
-"origin" "768 -128 96"
-"angle" "-180"
+"origin" "1280 -128 144"
+"angle" "-135"
 }
 // entity 2
-{
-"classname" "misc_model"
-"origin" "704 -64 64"
-"model" "models/modelstart.ase"
-"spawnflags" "6"
-}
-// entity 3
 {
 "classname" "misc_model"
 "origin" "96 -192 224"
@@ -395,7 +388,7 @@ brushDef
 "angle" "-180"
 "spawnflags" "6"
 }
-// entity 4
+// entity 3
 {
 "classname" "trigger_death"
 // brush 0
@@ -411,7 +404,7 @@ brushDef
 }
 }
 }
-// entity 5
+// entity 4
 {
 "classname" "trigger_goal"
 // brush 0
@@ -427,8 +420,15 @@ brushDef
 }
 }
 }
-// entity 6
+// entity 5
 {
 "classname" "item_health"
-"origin" "1120 -544 352"
+"origin" "1120 -512 352"
+}
+// entity 6
+{
+"classname" "misc_model"
+"origin" "1216 -192 96"
+"model" "models/modelstarthill.ase"
+"spawnflags" "6"
 }
