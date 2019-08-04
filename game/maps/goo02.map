@@ -516,14 +516,14 @@ brushDef
 // entity 1
 {
 "classname" "misc_model"
-"origin" "-864 128 192"
-"model" "models/modelstart.ase"
+"origin" "-864 0 224"
+"model" "models/modelstarthill.ase"
 "spawnflags" "6"
 }
 // entity 2
 {
 "classname" "info_player_start"
-"origin" "-800 64 224"
+"origin" "-800 64 288"
 }
 // entity 3
 {
