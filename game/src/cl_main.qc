@@ -138,7 +138,7 @@ noref void() CSQC_WorldLoaded =
 	else
 	{
 		cvar_set("chase_back", "160");
-		localcmd("music 2\n");
+		// localcmd("music 2\n");
 	}
 };
 
@@ -262,7 +262,8 @@ void() CSQC_Parse_Event =
 			}
 			else
 			{
-				win_time = 3;
+				if (win_time == 0)
+					win_time = 3;
 			}
 			break;
 		default:

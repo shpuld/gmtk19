@@ -1,8 +1,8 @@
-vector MENU_BG = '0.2 0.3 0.4';
-vector MENU_BG_DARK = '0.1 0.15 0.2';
-vector MENU_BORDER = '0.3 0.4 0.5';
-vector MENU_BUTTON = '0.3 0.4 0.5';
-vector MENU_BUTTON_BORDER = '0.35 0.45 0.55';
+vector MENU_BG = '0.2 0.5 0.6';
+vector MENU_BG_DARK = '0.1 0.25 0.3';
+vector MENU_BORDER = '0.3 0.5 0.6';
+vector MENU_BUTTON = '0.3 0.6 0.7';
+vector MENU_BUTTON_BORDER = '0.35 0.55 0.65';
 vector MENU_TEXT_1 = '1 1 1';
 vector MENU_TEXT_2 = '0.7 0.75 0.75';
 vector MENU_HIGHLIGHT = '1 1 1';
@@ -116,11 +116,9 @@ struct name_command {
 
 name_command bindlist[] = 
 {
-	{ "Forward", "+forward" },
-	{ "Back", "+back" },
-	{ "Left", "+moveleft" },
-	{ "Right", "+moveright" },
-	{ "Jump", "+jump" }
+	{ "Shoot", "+attack" },
+	{ "Undo Stroke", "impulse 100" },
+	{ "Restart", "restart" }
 };
 
 void(string id, vector pos, vector size, string name, string command) bind_button =
@@ -151,11 +149,12 @@ void(string id, vector pos, vector size, __inout vector scrollofs) bind_list =
 	sui_list_view_end();	
 };
 
-
 float current_menu;
 const float MENU_MAIN = 1;
 const float MENU_SETTINGS = 2;
 const float MENU_HELP = 3;
+const float MENU_NEWGAME = 4;
+const float MENU_NEXTLEVEL = 5;
 
 vector binds_scroll;
 void() settings_menu =
@@ -230,6 +229,124 @@ void() help_menu =
 	sui_pop_frame();	
 };
 
+void(string map) start_stage =
+{
+	if (cvar_string("mapname") == "menu") localcmd("music 2\n");
+	current_menu = MENU_MAIN;
+	localcmd(sprintf("map %s\n", map));
+};
+
+void(string id, vector pos, vector size, string name, string map) select_map_button =
+{
+	sui_push_frame(pos, size);
+	sui_set_align([SUI_ALIGN_START, SUI_ALIGN_CENTER]);
+	sui_action_element(pos, size, id, sui_noop);
+	if (sui_is_hovered(id)) sui_fill([0, 0], size, MENU_HIGHLIGHT, 0.1, 0);
+	sui_text([6, 0], MENU_TEXT_SMALL, name, MENU_TEXT_1, 1, 0);
+	sui_set_align([SUI_ALIGN_END, SUI_ALIGN_CENTER]);
+	
+	if (sui_is_clicked(id)) start_stage(map);
+	
+	sui_pop_frame();
+};
+
+vector maplist_scroll;
+void() new_game_menu =
+{
+	vector pos = [0, 0];
+	vector size = [240, 280];
+	
+	sui_push_frame(pos, size);
+	
+	sui_fill([0, 0], size, MENU_BG, 0.75, 0);
+	sui_border_box([0, 0], size, 2, MENU_BORDER, 0.3, 0);
+	
+	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_START]);
+	sui_text([0, 4], MENU_TEXT_MEDIUM, "New Game", MENU_TEXT_1, 1, 0);
+	
+	float xpos = 0;
+	float ypos = 16;
+	
+	pos = [xpos, ypos];
+	size = [200, 208];
+	sui_push_frame(pos, size);
+	
+	sui_fill(pos, size, MENU_BG_DARK, 0.75, 0);
+	sui_list_view_begin(strcat("mplst"), pos, size, [size_x - 6, 24], map_list.length, maplist_scroll, [0, 6]);
+	vector listitem_pos = '0 0 0';
+	for (float index = sui_list_item(listitem_pos); index > -1; index = sui_list_item(listitem_pos))
+	{
+		sui_push_frame(listitem_pos, [size_x - 6, 24]);
+		select_map_button(strcat("mplst", ftos(index)), [0, 0], [size_x - 6, 24], map_list[index].name, map_list[index].map);
+		sui_pop_frame();
+	}
+	sui_list_view_end();	
+	
+	sui_pop_frame();
+	
+	sui_set_align([SUI_ALIGN_END, SUI_ALIGN_END]);
+	my_button("ng_back", [-8, -8], [80, 20], "Back") ? current_menu = MENU_MAIN : 0;
+	
+	sui_pop_frame();
+};
+
+float strokes;
+float par;
+void(float currentstrokes, float currentpar) prompt_next_level =
+{
+	current_menu = MENU_NEXTLEVEL;
+	strokes = currentstrokes;
+	par = currentpar;
+};
+
+void() next_level_menu =
+{
+	vector pos = [0, 0];
+	vector size = [280, 180];
+	
+	sui_push_frame(pos, size);
+
+	sui_fill([0, 0], size, MENU_BG, 0.75, 0);
+	sui_border_box([0, 0], size, 2, MENU_BORDER, 0.3, 0);
+	
+	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_START]);
+	sui_text([0, 4], MENU_TEXT_MEDIUM, "Well Done!", MENU_TEXT_1, 1, 0);
+	
+	float xpos = 0;
+	float ypos = 32;
+	string currentmap = cvar_string("mapname");
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, sprintf("You cleared '%s'!", get_map_name(currentmap)), MENU_TEXT_1, 1, 0);
+	ypos += 32;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, sprintf("Your strokes: %.0f, Par: %.0f", strokes, par), MENU_TEXT_1, 1, 0);
+	ypos += 16;
+	sui_text([xpos, ypos], MENU_TEXT_SMALL, "Your rank is:", MENU_TEXT_1, 1, 0);
+	ypos += 16;
+	if (strokes < par)
+	{
+		sui_text([xpos, ypos], MENU_TEXT_MEDIUM, "Diamond", '0.2 0.8 1', 1, 0);
+	}
+	else if (strokes == par)
+	{
+		sui_text([xpos, ypos], MENU_TEXT_MEDIUM, "Gold", '1 0.8 0.2', 1, 0);
+	}
+	else if (strokes <= par + 3)
+	{
+		sui_text([xpos, ypos], MENU_TEXT_MEDIUM, "Silver", '0.7 0.8 1', 1, 0);
+	}
+	else
+	{
+		sui_text([xpos, ypos], MENU_TEXT_MEDIUM, "Bronze", '0.7 0.4 0.1', 1, 0);
+	}
+	
+	sui_set_align([SUI_ALIGN_START, SUI_ALIGN_END]);
+	my_button("nl_reset", [8, -8], [80, 20], "Restart") ? localcmd("restart\n") : 0;
+	
+	sui_set_align([SUI_ALIGN_END, SUI_ALIGN_END]);
+	my_button("nl_next", [-8, -8], [80, 20], "Next") ? start_stage(get_next_map(currentmap)) : 0;
+
+	sui_pop_frame();	
+};
+
 void() main_menu =
 {
 	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_START]);
@@ -245,9 +362,19 @@ void() main_menu =
 	
 	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_START]);
 	
-	my_button("mm_start", [0, 8], [size_x - 16, 20], "Start Game") ? localcmd("map test\n") : 0;
-	my_button("mm_settings", [0, 8 + 24], [size_x - 16, 20], "Settings") ? current_menu = MENU_SETTINGS : 0;
-	my_button("mm_help", [0, 8 + 48], [size_x - 16, 20], "Help") ? current_menu = MENU_HELP : 0;
+	if (cvar_string("mapname") != "menu")
+	{
+		my_button("mm_restart", [0, 8], [size_x - 16, 20], "Restart") ? localcmd("restart\n") : 0;
+		my_button("mm_start", [0, 8 + 24], [size_x - 16, 20], "New Game") ? current_menu = MENU_NEWGAME : 0;
+		my_button("mm_settings", [0, 8 + 24 + 24], [size_x - 16, 20], "Settings") ? current_menu = MENU_SETTINGS : 0;
+	}
+	else
+	{
+		my_button("mm_start", [0, 8], [size_x - 16, 20], "New Game") ? start_stage("start") : 0;
+		my_button("mm_settings", [0, 8 + 24], [size_x - 16, 20], "Settings") ? current_menu = MENU_SETTINGS : 0;
+	}
+	
+	// my_button("mm_help", [0, 8 + 48 + 24], [size_x - 16, 20], "Help") ? current_menu = MENU_HELP : 0;
 	sui_set_align([SUI_ALIGN_CENTER, SUI_ALIGN_END]);
 	my_button("mm_quit", [0, -8], [size_x - 16, 20], "Quit") ? localcmd("quit\n") : 0;
 	sui_pop_frame();	
@@ -261,7 +388,9 @@ void(vector size) root_menu =
 	{
 		case MENU_MAIN: main_menu(); break;
 		case MENU_SETTINGS: settings_menu(); break;
-		case MENU_HELP: help_menu();
+		case MENU_HELP: help_menu(); break;
+		case MENU_NEWGAME: new_game_menu(); break;
+		case MENU_NEXTLEVEL: next_level_menu(); break;
 		default: break;
 	}
 };

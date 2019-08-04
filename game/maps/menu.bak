@@ -95,35 +95,35 @@ brushDef
 // entity 2
 {
 "classname" "item_haste"
-"origin" "104 192 -104"
+"origin" "168 256 -104"
 }
 // entity 3
 {
 "classname" "item_flight"
-"origin" "-248 -168 -136"
+"origin" "-248 -232 -136"
 }
 // entity 4
 {
 "classname" "item_health"
-"origin" "-232 40 -104"
+"origin" "-296 40 -104"
 }
 // entity 5
 {
 "classname" "item_health"
-"origin" "-120 120 -56"
+"origin" "-184 248 -56"
 }
 // entity 6
 {
 "classname" "item_health"
-"origin" "-128 -168 -184"
+"origin" "0 -296 -184"
 }
 // entity 7
 {
 "classname" "item_health"
-"origin" "184 -112 -144"
+"origin" "248 -176 -144"
 }
 // entity 8
 {
 "classname" "item_health"
-"origin" "144 88 -96"
+"origin" "208 152 -96"
 }

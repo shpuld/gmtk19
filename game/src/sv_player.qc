@@ -20,6 +20,8 @@ void() respawn_to_last_safe =
 {
 	if (self.active_jump == 0) return;
 	
+	if (self.origin == self.last_safe) return;
+	
 	self.origin = self.last_safe;
 	self.angles = self.last_safe_angles;
 	self.v_angle = self.last_safe_angles;

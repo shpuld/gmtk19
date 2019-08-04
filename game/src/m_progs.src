@@ -1,5 +1,6 @@
 ../menu.dat
 m_defs.qc
+sh_maplist.qc
 sui_sys.qc
 m_menu.qc
 m_main.qc

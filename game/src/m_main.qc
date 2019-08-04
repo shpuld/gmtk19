@@ -9,6 +9,7 @@ void() m_init =
 		localcmd("map menu\n");
 	splash_time = time + 2.5;
 	registercommand("togglemenu2");
+	registercommand("nextlevel");
 	// drawfont = loadfont("", "Courier Prime Code", "12,16,24,32,48,64,72,128,256,512", -1, 0, 0);
 	setcursormode(TRUE,"gfx/xhair", [16, 16], cvar("vid_conautoscale"));
 	current_menu = MENU_MAIN;
@@ -91,11 +92,18 @@ float(float evtype, float scanx, float chary, float devid) Menu_InputEvent =
 	return FALSE;
 };
 
+void(float currentstrokes, float currentpar) prompt_next_level;
 float(string cmd) m_consolecommand =
 {
 	tokenize(cmd);
+	printf("cmd %s\n", cmd);
 	switch (argv(0))
 	{
+	case "nextlevel":
+		prompt_next_level(stof(argv(1)), stof(argv(2)));
+		m_open();
+		return TRUE;
+		break;
 	default: break;
 	}
 

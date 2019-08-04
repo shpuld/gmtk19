@@ -59,5 +59,11 @@ void() draw_hud =
 		drawstring([g_width/2 - strlen(prompt)*txtsize*0.5, 72 + 8], prompt, [txtsize, txtsize], '1 1 1', a*2, 0);
 		win_time -= frametime;
 		win_time = max(0, win_time);
+		
+		if (win_time < 1 && win_time > 0)
+		{
+			win_time = -1;
+			localcmd(sprintf("nextlevel %.0f %.0f\n", getstatf(STAT_STROKES), getstatf(STAT_PAR)));
+		}
 	}
 };

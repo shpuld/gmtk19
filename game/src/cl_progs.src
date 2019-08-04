@@ -1,5 +1,6 @@
 ../csprogs.dat
 cl_defs.qc
+sh_maplist.qc
 sh_customdefs.qc
 cl_customdefs.qc
 sui_sys.qc
