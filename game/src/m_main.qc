@@ -3,6 +3,13 @@ float menu_active;
 
 float splash_time;
 
+float current_menu;
+const float MENU_MAIN = 1;
+const float MENU_SETTINGS = 2;
+const float MENU_HELP = 3;
+const float MENU_NEWGAME = 4;
+const float MENU_NEXTLEVEL = 5;
+
 void() m_init =
 {
 	if (cvar_string("mapname") == "")
@@ -63,6 +70,8 @@ void(vector screensize) m_draw =
 
 void() m_close =
 {
+	if (current_menu == MENU_NEXTLEVEL) return;
+	
 	setkeydest(0);
 	menu_active = FALSE;
 };

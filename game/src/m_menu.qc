@@ -254,7 +254,7 @@ vector maplist_scroll;
 void() new_game_menu =
 {
 	vector pos = [0, 0];
-	vector size = [240, 280];
+	vector size = [216, 280];
 	
 	sui_push_frame(pos, size);
 	
@@ -339,7 +339,11 @@ void() next_level_menu =
 	}
 	
 	sui_set_align([SUI_ALIGN_START, SUI_ALIGN_END]);
-	my_button("nl_reset", [8, -8], [80, 20], "Restart") ? localcmd("restart\n") : 0;
+	if (my_button("nl_reset", [8, -8], [80, 20], "Restart"))
+	{
+		current_menu = MENU_MAIN;
+		localcmd("restart\n");
+	}
 	
 	sui_set_align([SUI_ALIGN_END, SUI_ALIGN_END]);
 	my_button("nl_next", [-8, -8], [80, 20], "Next") ? start_stage(get_next_map(currentmap)) : 0;
@@ -364,7 +368,7 @@ void() main_menu =
 	
 	if (cvar_string("mapname") != "menu")
 	{
-		my_button("mm_restart", [0, 8], [size_x - 16, 20], "Restart") ? localcmd("restart\n") : 0;
+		my_button("mm_restart", [0, 8], [size_x - 16, 20], "Restart") ? start_stage("start") : 0;
 		my_button("mm_start", [0, 8 + 24], [size_x - 16, 20], "New Game") ? current_menu = MENU_NEWGAME : 0;
 		my_button("mm_settings", [0, 8 + 24 + 24], [size_x - 16, 20], "Settings") ? current_menu = MENU_SETTINGS : 0;
 	}

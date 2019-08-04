@@ -95,7 +95,7 @@ brushDef
 // entity 2
 {
 "classname" "item_haste"
-"origin" "168 256 -104"
+"origin" "40 256 -104"
 }
 // entity 3
 {

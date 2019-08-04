@@ -12,7 +12,8 @@ map_list_item map_list[] =
 	{ "goo01", "Goo 1" },
 	{ "goo03", "Goo 3" },
 	{ "goo04", "Goo 4" },
-	{ "goo05", "Goo 5" }
+	{ "goo05", "Goo 5" },
+	{ "climb", "Climb" }
 };
 
 string(string mapfile) get_map_name =
