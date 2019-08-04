@@ -47,7 +47,19 @@ void() draw_hud =
 	drawstring([g_width - (strlen(strokes_text) + strlen(par_text) + 2)*small_text_size_x, 0], par_text, small_text_size, '1 1 1', 0.8, 0);
 	drawstring([g_width - (strlen(strokes_text) + 2)*small_text_size_x - strlen(par)*dm_text_size_x, small_text_size_y], par, dm_text_size, '1 1 1', 0.8, 0);
 	
-	vector msg_bg_size = [360, 42];
+	vector msg_bg_size = [256, 32];
+	
+	float power = getstatf(STAT_POWER);
+	if (power > 0)
+	{
+		float powerfrac = power/0.8;
+		string powerstr = sprintf("%.0f%%", powerfrac*100);
+		drawpic([g_width/2 - msg_bg_size_x/2, g_height - 72], "textures/message_bg", msg_bg_size, '1 1 1', 0.7);
+		float h = max(1.0, powerfrac)*(msg_bg_size_y - 24);
+		drawfill([g_width/2 - msg_bg_size_x/2, g_height - 72 - h*0.5 + (msg_bg_size_y - 24)*0.5] + [12, 12], [min(1.0, powerfrac)*(msg_bg_size_x - 24), h], color_for_power(power), 1, 1);
+	}
+	
+	msg_bg_size = [360, 42];
 	float txtsize = 16;
 	if (not_enough_diamonds_time)
 	{

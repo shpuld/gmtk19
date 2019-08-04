@@ -39,7 +39,7 @@ void() draw_trajectory =
 		custom_physics(self.trajectorydot, 0.0125);
 		self.trajectorydot.angles = vectoangles(self.trajectorydot.velocity);
 		self.trajectorydot.alpha = 1 - (i / 40);
-		self.trajectorydot.colormod = '0 1 0' * (0.8-power) + '1.2 0.1 0' * power; 
+		self.trajectorydot.colormod = color_for_power(power); 
 		
 		if ((float)i%3 == 0)
 		{
