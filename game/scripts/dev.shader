@@ -316,5 +316,5 @@ textures/dev/test_sky
 	surfaceparm nolightmap
 	surfaceparm nomarks
 	nodraw
-	// skyparms textures/dev/sky - -
+	skyparms textures/dev/sky - -
 }

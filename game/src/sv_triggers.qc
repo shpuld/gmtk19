@@ -44,6 +44,7 @@ void() bricks_touch =
 	if (other.classname != "player") return;
 	if (vlen(other.velocity) > 700)
 	{
+		if (other.jump_flags & JF_STICKY) other.jump_flags -= JF_STICKY;
 		pointparticles(particleeffectnum("weapons.bricks"), (self.absmin + self.absmax)/2, '0 0 1', 1);
 		self.think = bricks_break;
 		self.nextthink = time;

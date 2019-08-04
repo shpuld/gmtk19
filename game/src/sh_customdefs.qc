@@ -14,6 +14,8 @@ const float EV_GOAL = 12;
 const float MAX_GLUE = 5;
 const float MAX_ROCKET = 3;
 
+const int Q3SURF_SKY = 4;
+
 void() precache_everything =
 {
 	precache_sound("demon/dland2.wav");

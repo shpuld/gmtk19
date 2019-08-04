@@ -326,7 +326,7 @@ vector input_cursor_trace_start;
 vector input_cursor_trace_endpos;
 float input_cursor_trace_entnum;
 int trace_endcontents;
-int trace_surfaceflags;
+int trace_surfaceflagsi;
 int trace_brush_id;
 int trace_brush_faceid;
 int trace_surface_id;	/* 1-based. 0 if not known. */

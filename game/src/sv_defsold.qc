@@ -14,13 +14,13 @@ Available options:
 */
 #pragma noref 1
 //#pragma flag enable logicops
-#pragma warning error Q101 /*too many parms. The vanilla qcc didn't validate properly, hence why fteqcc normally treats it as a warning.*/
-#pragma warning error Q105 /*too few parms. The vanilla qcc didn't validate properly, hence why fteqcc normally treats it as a warning.*/
-#pragma warning error Q106 /*assignment to constant/lvalue. Define them as var if you want to initialise something.*/
-#pragma warning error Q208 /*system crc unknown. Compatibility goes out of the window if you disable this.*/
-#pragma warning disable F211 /*system crc outdated (eg: dp's csqc). Note that this may trigger emulation.*/
-#pragma warning enable F301 /*non-utf-8 strings. Think of the foreigners! Also think of text editors that insist on screwing up your char encodings.*/
-#pragma warning enable F302 /*uninitialised locals. They usually default to 0 in qc (except in recursive functions), but its still probably a bug*/
+#pragma warning error Q101 /*too many parms*/
+#pragma warning error Q105 /*too few parms*/
+#pragma warning error Q106 /*assignment to constant/lvalue*/
+#pragma warning error Q208 /*system crc unknown*/
+#pragma warning disable F211 /*system crc outdated (eg: dp's csqc)*/
+#pragma warning enable F301 /*non-utf-8 strings*/
+#pragma warning enable F302 /*uninitialised locals*/
 #pragma target FTE
 #ifndef QUAKEWORLD
 #define QUAKEWORLD
@@ -84,6 +84,7 @@ Available options:
 #define DP_INPUTBUTTONS
 #define DP_LIGHTSTYLE_STATICVALUE
 #define DP_LITSUPPORT
+#define DP_MD3_TAGSINFO
 #define DP_MONSTERWALK /* MOVETYPE_WALK is valid on non-player entities. Note that only players receive acceleration etc in line with none/bounce/fly/noclip movetypes on the player, thus you will have to provide your own accelerations (incluing gravity) yourself. */
 #define DP_MOVETYPEBOUNCEMISSILE
 #define DP_MOVETYPEFOLLOW
@@ -105,7 +106,6 @@ Available options:
 #define DP_QC_FS_SEARCH
 #define DP_QC_GETSURFACE
 #define DP_QC_GETSURFACEPOINTATTRIBUTE
-#define DP_QC_GETTAGINFO
 #define DP_QC_MINMAXBOUND
 #define DP_QC_MULTIPLETEMPSTRINGS /* Superseded by DP_QC_UNLIMITEDTEMPSTRINGS. Functions that return a temporary string will not overwrite/destroy previous temporary strings until at least 16 strings are returned (or control returns to the engine). */
 #define DP_QC_RANDOMVEC
@@ -140,7 +140,6 @@ Available options:
 #define DP_SOLIDCORPSE
 #define DP_SPRITE32
 #define DP_SV_BOTCLIENT
-#define DP_SV_CLIENTCAMERA /* Works like svc_setview except also handles pvs. */
 #define DP_SV_CLIENTCOLORS /* Provided only for compatibility with DP. */
 #define DP_SV_CLIENTNAME /* Provided only for compatibility with DP. */
 #define DP_SV_DRAWONLYTOCLIENT
@@ -197,6 +196,7 @@ Available options:
 #define FTE_MULTIPROGS /* Multiple progs.dat files can be loaded inside the same qcvm. Insert new ones with addprogs inside the 'init' function, and use externvalue+externset to rewrite globals (and hook functions) to link them together. Note that the result is generally not very clean unless you carefully design for it beforehand. */
 #define FTE_MULTITHREADED /* Faux multithreading, allowing multiple contexts to run in sequence. */
 #define FTE_MVD_PLAYERSTATS /* In csqc, getplayerstat can be used to query any player's stats when playing back MVDs. isdemo will return 2 in this case. */
+#define FTE_QC_NPCCHAT
 #define FTE_PART_SCRIPT /* Specifies that the r_particledesc cvar can be used to select a list of particle effects to load from particles/*.cfg, the format of which is documented elsewhere. */
 #define FTE_PART_NAMESPACES /* Specifies that the engine can use foo.bar to load effect foo from particle description bar. When used via ssqc, this should cause the client to download whatever effects as needed. */
 #define FTE_PART_NAMESPACE_EFFECTINFO /* Specifies that effectinfo.bar can load effects from effectinfo.txt for DP compatibility. */
@@ -225,7 +225,7 @@ Available options:
 #define FTE_QUAKE3_CLIENT /* This engine is able to act as a quake3 client */
 #define FTE_QUAKE3_SERVER /* This engine is able to act as a quake3 server */
 #define FTE_SOLID_LADDER /* Allows a simple trigger to remove effects of gravity (solid 20). obsolete. will prolly be removed at some point as it is not networked properly. Use FTE_ENT_SKIN_CONTENTS */
-#define FTE_SPLITSCREEN /* Client supports splitscreen, controlled via cl_splitscreen. Servers require allow_splitscreen 1 if splitscreen is to be used over the internet. Mods that use csqc will need to be aware for this to work properly. per-client networking may be problematic. */
+#define FTE_SPLITSCREEN /* Client supports splitscreen, controlled via cl_splitclients. Servers require allow_splitscreen 1 if splitscreen is to be used over the internet. Mods that use csqc will need to be aware for this to work properly. per-client networking may be problematic. */
 #define FTE_SQL /* Provides sql* builtins which can be used for sql database access */
 #define FTE_SQL_SQLITE /* SQL functionality is able to utilise sqlite databases */
 #define FTE_STRINGS /* Extra builtins (and additional behaviour) to make string manipulation easier */
@@ -276,7 +276,7 @@ float total_secrets;
 float total_monsters;
 float found_secrets;
 float killed_monsters;
-float parm1, parm2, parm3, parm4, parm5, parm6, parm7, parm8, parm9, parm10, parm11, parm12, parm13, parm14, parm15, parm16;	/* Player specific mod-defined values that are transferred from one map to the next. These are set by the qc inside calls to SetNewParms and SetChangeParms, and can then be read on a per-player basis after a call to the setspawnparms builtin. They are not otherwise valid. */
+float parm1, parm2, parm3, parm4, parm5, parm6, parm7, parm8, parm9, parm10, parm11, parm12, parm13, parm14, parm15, parm16;
 vector v_forward, v_up, v_right;
 float trace_allsolid, trace_startsolid, trace_fraction;
 vector trace_endpos, trace_plane_normal;
@@ -285,17 +285,16 @@ entity trace_ent;
 float trace_inopen;
 float trace_inwater;
 entity msg_entity;
-void() main;	/* This function is never called, and is effectively dead code. */
-void() StartFrame;	/* Called at the start of each new physics frame. Player entities may think out of sequence so try not to depend upon explicit ordering too much. */
-void() PlayerPreThink;	/* With Prediction(QW compat/FTE default): Called before the player's input commands are processed.
-No Prediction(NQ compat): Called AFTER the player's movement intents have already been processed (ie: velocity will have already changed according to input_*, but before the actual position change. */
-void() PlayerPostThink;	/* Called after the player's input commands are processed. */
-void() ClientKill;	/* Called in response to 'cmd kill' (or just 'kill'). */
-void(optional float csqcactive) ClientConnect;	/* Called after the connecting client has finished loading and is ready to receive active entities. Note that this is NOT the first place that a client might be referred to. */
-void() PutClientInServer;	/* Enginewise, this is only ever called immediately after ClientConnect and is thus a little redundant. Modwise, this is also called for respawning a player etc. */
-void() ClientDisconnect;	/* Called once a client disconnects or times out. Not guarenteed to be called on map changes. */
-void() SetNewParms;	/* Called without context when a new client initially connects (before ClientConnect is even called). This function is expected to only set the parm* globals so that they can be decoded properly later. You should not rely on 'self' being set. */
-void() SetChangeParms;	/* Called for each client on map changes. Should copy various entity fields to the parm* globals. */
+void() main;
+void() StartFrame;
+void() PlayerPreThink;
+void() PlayerPostThink;
+void() ClientKill;
+void() ClientConnect;
+void() PutClientInServer;
+void() ClientDisconnect;
+void() SetNewParms;
+void() SetChangeParms;
 void end_sys_globals;
 .float modelindex;	/* This is the model precache index for the model that was set on the entity, instead of having to look up the model according to the .model field. Use setmodel to change it. */
 .vector absmin;	/* Set by the engine when the entity is relinked (by setorigin, setsize, or setmodel). This is in world coordinates. */
@@ -380,7 +379,7 @@ vector input_movevalues;
 float input_buttons;
 float input_impulse;
 int trace_endcontents;
-int trace_surfaceflagsi;
+int trace_surfaceflags;
 int trace_brush_id;
 int trace_brush_faceid;
 int trace_surface_id;	/* 1-based. 0 if not known. */
@@ -389,7 +388,7 @@ int trace_triangle_id;	/* 1-based. 0 if not known. */
 vector global_gravitydir = '0 0 -1';	/* The direction gravity should act in if not otherwise specified per entity. */
 int serverid;	/* The unique id of this server within the server cluster. */
 .vector punchangle;
-.float gravity;	/* Multiplier applied in addition to sv_gravity (not absolute units), to control the gravity affecting this entity specifically. */
+.float gravity;
 .float hull;	/* Overrides the hull used by the entity for walkmove/movetogoal and not traceline/tracebox. */
 .entity movechain;	/* This is a linked list of entities which will be moved whenever this entity moves, logically they are attached to this entity. */
 .void() chainmoved;	/* Called when the entity is moved as a result of being part of another entity's .movechain */
@@ -437,7 +436,12 @@ int serverid;	/* The unique id of this server within the server cluster. */
 .entity drawonlytoclient;	/* This entity will be sent *only* to the player named by this field. To other players they will be invisible and not emit dlights/particles. Does not work in MVD-recorded game. */
 .entity viewmodelforclient;	/* This entity will be sent only to the player named by this field, and this entity will be attached to the player's view as an additional weapon model. */
 .entity exteriormodeltoclient;	/* This entity will be invisible to the player named by this field, except in mirrors or mirror-like surfaces, where it will be visible as normal. It may still cast shadows as normal, and generate lights+particles, depending on client settings. Does not affect how other players see the entity. */
-.entity clientcamera;	/* Controls which entity to use for this client's camera. */
+.float button3;	/* DP_INPUTBUTTONS (note in qw, we set 1 to equal 3, to match zquake/fuhquake/mvdsv) */
+.float button4;
+.float button5;
+.float button6;
+.float button7;
+.float button8;
 .float glow_size;
 .float glow_color;
 .float glow_trail;
@@ -470,20 +474,16 @@ void(float pauseduration) SV_PausedTic;	/* For each frame that the server is pau
 float(float newstatus) SV_ShouldPause;	/* Called to give the qc a change to block pause/unpause requests. Return false for the pause request to be ignored. newstatus is 1 if the user is trying to pause the game. For the duration of the call, self will be set to the player who tried to pause, or to world if it was triggered by a server-side event. */
 void() SV_RunClientCommand;	/* Called each time a player movement packet was received from a client. Self is set to the player entity which should be updated, while the input_* globals specify the various properties stored within the input packet. The contents of this function should be somewaht identical to the equivelent function in CSQC, or prediction misses will occur. If you're feeling lazy, you can simply call 'runstandardplayerphysics' after modifying the inputs. */
 void() SV_AddDebugPolygons;	/* Called each video frame. This is the only place where ssqc is allowed to call the R_BeginPolygon/R_PolygonVertex/R_EndPolygon builtins. This is exclusively for debugging, and will break in anything but single player as it will not be called if the engine is not running both a client and a server. */
-void() SV_PlayerPhysics;	/* Compatibility method to tweak player input that does not reliably work with prediction (prediction WILL break). Mods that care about prediction should use SV_RunClientCommand instead. If pr_no_playerphysics is set to 1, this function will never be called, which will either fix prediction or completely break player movement depending on whether the feature was even useful. */
+void() SV_PlayerPhysics;	/* Legacy method to tweak player input that does not reliably work with prediction (prediction WILL break). Mods that care about prediction should use SV_RunClientCommand instead. If pr_no_playerphysics is set to 1, this function will never be called, which will either fix prediction or completely break player movement depending on whether the feature was even useful. */
 void() EndFrame;	/* Called after non-player entities have been run at the end of the physics frame. Player physics is performed out of order and can/will still occur between EndFrame and BeginFrame. */
 string(string addr, string uinfo, string features)  SV_CheckRejectConnection;	/* Called to give the mod a chance to ignore connection requests based upon client protocol support or other properties. Use infoget to read the uinfo and features arguments. */
 string(string uri, string method, string postdata, __in string requestheaders, __inout string responseheaders) Cef_GeneratePage;	/* Provides an entrypoint to generate pages for the CEF plugin from within QC. Headers are 
 -separated key/value pairs (use tokenizebyseparator). */
-string(string uri, string method, string postdata, __in string requestheaders, __inout string responseheaders) HTTP_GeneratePage;	/* Provides an entrypoint to generate pages for pages requested over http (sv_port_tcp+net_enable_http). Headers are 
--separated key/value pairs (use tokenizebyseparator). Return __NULL__ to let the engine handle it, an empty string for a 404, and any other text for a regular 200 response. */
 void(float prevprogs) init;	/* Part of FTE_MULTIPROGS. Called as soon as a progs is loaded, called at a time when entities are not valid. This is the only time when it is safe to call addprogs without field assignment. As it is also called as part of addprogs, this also gives you a chance to hook functions in modules that are already loaded (via externget+externget). */
 void() initents;	/* Part of FTE_MULTIPROGS. Called after fields have been finalized. This is the first point at which it is safe to call spawn(), and is called before any entity fields have been parsed. You can use this entrypoint to send notifications to other modules. */
-float parm17, parm18, parm19, parm20, parm21, parm22, parm23, parm24, parm25, parm26, parm27, parm28, parm29, parm30, parm31, parm32;	/* Additional spawn parms, following the same parmN theme. */
+float parm17, parm18, parm19, parm20, parm21, parm22, parm23, parm24, parm25, parm26, parm27, parm28, parm29, parm30, parm31, parm32;
 float parm33, parm34, parm35, parm36, parm37, parm38, parm39, parm40, parm41, parm42, parm43, parm44, parm45, parm46, parm47, parm48;
 float parm49, parm50, parm51, parm52, parm53, parm54, parm55, parm56, parm57, parm58, parm59, parm60, parm61, parm62, parm63, parm64;
-string parm_string;	/* Like the regular parmN globals, but preserves string contents. */
-string startspot;	/* Receives the value of the second argument to changelevel from the previous map. */
 var float dimension_send;	/* Used by multicast functionality. Multicasts (and related builtins that multicast internally) will only be sent to players where (player.dimension_see & dimension_send) is non-zero. */
 //var float dimension_default = 255;
 /* Default dimension bitmask */
@@ -564,13 +564,13 @@ const int CONTENTBIT_SKY = 0x80000000i;
 const int CONTENTBITS_POINTSOLID = CONTENTBIT_SOLID|0x00000002i|CONTENTBIT_BODY;	/* Bits that traceline would normally consider solid */
 const int CONTENTBITS_BOXSOLID = CONTENTBIT_SOLID|0x00000002i|CONTENTBIT_BODY|CONTENTBIT_PLAYERCLIP;	/* Bits that tracebox would normally consider solid */
 const int CONTENTBITS_FLUID = CONTENTBIT_WATER|CONTENTBIT_SLIME|CONTENTBIT_LAVA|CONTENTBIT_SKY;
-const float SPA_POSITION = 0;	/* These SPA_* constants are to specify which attribute is returned by the getsurfacepointattribute builtin */
-const float SPA_S_AXIS = 1;
-const float SPA_T_AXIS = 2;
-const float SPA_R_AXIS = 3;	/* aka: SPA_NORMAL */
-const float SPA_TEXCOORDS0 = 4;
-const float SPA_LIGHTMAP0_TEXCOORDS = 5;
-const float SPA_LIGHTMAP0_COLOR = 6;
+const int SPA_POSITION;	/* These SPA_* constants are to specify which attribute is returned by the getsurfacepointattribute builtin */
+const int SPA_S_AXIS = 1;
+const int SPA_T_AXIS = 2;
+const int SPA_R_AXIS = 3;	/* aka: SPA_NORMAL */
+const int SPA_TEXCOORDS0 = 4;
+const int SPA_LIGHTMAP0_TEXCOORDS = 5;
+const int SPA_LIGHTMAP0_COLOR = 6;
 const float CHAN_AUTO = 0;	/* The automatic channel, play as many sounds on this channel as you want, and they'll all play, however the other channels will replace each other. */
 const float CHAN_WEAPON = 1;
 const float CHAN_VOICE = 2;
@@ -581,7 +581,7 @@ const float SOUNDFLAG_RELIABLE = 1;	/* The sound will be sent reliably, and with
 const float SOUNDFLAG_FORCELOOP = 2;	/* The sound will restart once it reaches the end of the sample. */
 const float SOUNDFLAG_NOREVERB = 32;	/* Disables the use of underwater/reverb effects on this sound effect. */
 const float SOUNDFLAG_FOLLOW = 64;	/* The sound's origin will updated to follow the emitting entity. */
-const float SOUNDFLAG_UNICAST = 256;	/* The sound will be sent only by the player specified by msg_entity. Spectators and related splitscreen players will also hear the sound. */
+const float SOUNDFLAG_UNICAST = 256;	/* The sound will be heard only by the player specified by msg_entity. */
 const float SOUNDFLAG_SENDVELOCITY = 512;	/* The entity's current velocity will be sent to the client, only useful if doppler is enabled. */
 const float ATTN_NONE = 0;	/* Sounds with this attenuation can be heard throughout the map */
 const float ATTN_NORM = 1;	/* Standard attenuation */
@@ -597,13 +597,11 @@ const float MSG_ENTITY = 5;	/* The byte(s) will be written into the entity buffe
 const float MULTICAST_ALL = 0;	/* The multicast message is unreliably sent to all players. MULTICAST_ constants are valid arguments for the multicast builtin, which ignores the specified origin when given this constant. */
 const float MULTICAST_PHS = 1;	/* The multicast message is unreliably sent to only players that can potentially hear the specified origin. Its quite loose. */
 const float MULTICAST_PVS = 2;	/* The multicast message is unreliably sent to only players that can potentially see the specified origin. */
-const float MULTICAST_ONE = 6;	/* The multicast message is unreliably sent to the player (AND ALL TRACKING SPECTATORS) specified in the msg_entity global. The specified origin is ignored. */
-const float MULTICAST_ONE_NOSPECS = 9;	/* The multicast message is unreliably sent to the player specified in the msg_entity global. The specified origin is ignored. */
+const float MULTICAST_ONE = 6;	/* The multicast message is unreliably sent to the player specified in the msg_entity global. The specified origin is ignored. */
 const float MULTICAST_ALL_R = 3;	/* The multicast message is reliably sent to all players. The specified origin is ignored. */
 const float MULTICAST_PHS_R = 4;	/* The multicast message is reliably sent to only players that can potentially hear the specified origin. Players might still not receive it if they are out of range. */
 const float MULTICAST_PVS_R = 5;	/* The multicast message is reliably sent to only players that can potentially see the specified origin. Players might still not receive it if they cannot see the event. */
-const float MULTICAST_ONE_R = 7;	/* The multicast message is reliably sent to the player (AND ALL TRACKING SPECTATORS) specified in the msg_entity global. The specified origin is ignored */
-const float MULTICAST_ONE_R_NOSPECS = 10;	/* The multicast message is reliably sent to the player specified in the msg_entity global. The specified origin is ignored */
+const float MULTICAST_ONE_R = 7;	/* The multicast message is reliably sent to the player specified in the msg_entity global. The specified origin is ignored */
 const float PRINT_LOW = 0;
 const float PRINT_MEDIUM = 1;
 const float PRINT_HIGH = 2;
@@ -611,8 +609,8 @@ const float PRINT_CHAT = 3;
 const float PVSF_NORMALPVS = 0;	/* Filter first by PVS, then filter this entity using tracelines if sv_cullentities is enabled. */
 const float PVSF_NOTRACECHECK = 1;	/* Filter strictly by PVS. */
 const float PVSF_USEPHS = 2;	/* Send if we're close enough to be able to hear this entity. */
-const float PVSF_IGNOREPVS = 3;	/* Ignores pvs. This entity is visible whereever you are on the map. Updates will be sent regardless of pvs or phs */
-const float PVSF_NOREMOVE = 128;	/* Once visible to a client, this entity will remain visible. This can be useful for csqc and corpses. While this flag is set, no CSQC_Remove events will be sent for the entity, but this does NOT mean that it will still receive further updates while outside of the pvs. */
+const float PVSF_IGNOREPVS = 3;	/* Ignores pvs. This entity is visible whereever you are on the map. */
+const float PVSF_NOREMOVE = 128;	/* Once visible to a client, this entity will remain visible. This can be useful for csqc and corpses. */
 const string INFOKEY_P_IP = "ip";	/* The apparent ip address of the client. This may be a proxy's ip address. */
 const string INFOKEY_P_REALIP = "realip";	/* If sv_getrealip is set, this gives the ip as determine using that algorithm. */
 const string INFOKEY_P_CSQCACTIVE = "csqcactive";	/* Client has csqc enabled. CSQC ents etc will be sent to this player. */
@@ -673,7 +671,6 @@ const float EF_BRIGHTLIGHT = 4;
 const float EF_DIMLIGHT = 8;
 const float EF_FLAG1 = 16;
 const float EF_FLAG2 = 32;
-const float EF_ADDITIVE = 32;	/* The entity will be drawn with an additive blend. This is NOT supported on players in any quakeworld engine. */
 const float EF_BLUE = 64;	/* A blue glow */
 const float EF_RED = 128;	/* A red glow */
 const float EF_GREEN = 262144;	/* A green glow */
@@ -1034,9 +1031,6 @@ void(string cvar, float val) cvar_setf = #176;
 void(string soundname, optional float channel, optional float volume) localsound = #177; /*
 		Plays a sound... locally... probably best not to call this from ssqc. Also disables reverb. */
 
-float(string soundname, float queryonly) getsoundindex = #0:getsoundindex; /*
-		Provides a way to query if a sound is already precached or not. The return value can also be checked for <=255 to see if it'll work over any network protocol. The sound index can also be used for writebyte hacks, but this is discouraged - use SOUNDFLAG_UNICAST instead. */
-
 float(string modelname, optional float queryonly) getmodelindex = #200; /*
 		Acts as an alternative to precache_model(foo);setmodel(bar, foo); return bar.modelindex;
 		If queryonly is set and the model was not previously precached, the builtin will return 0 without needlessly precaching the model. */
@@ -1084,9 +1078,7 @@ void(float sleeptime) sleep = #212; /* Part of FTE_MULTITHREADED
 void(entity player, string key, string value) forceinfokey = #213; /* Part of FTE_FORCEINFOKEY
 		Directly changes a user's info without pinging off the client. Also allows explicitly setting * keys, including *spectator. Does not affect the user's config or other servers. */
 
-void(entity player, string key, void *data, int size) forceinfokeyblob = #0:forceinfokeyblob; /*
-		Directly changes a user's info without pinging off the client. Also allows explicitly setting * keys, including *spectator. Does not affect the user's config or other servers. */
-
+void(string filename, float starttag, entity edict) chat = #214; /* Part of FTE_QC_NPCCHAT*/
 void(vector org, vector dmin, vector dmax, float colour, float effect, float count) particle2 = #215; /* Part of FTE_HEXEN2*/
 void(vector org, vector box, float colour, float effect, float count) particle3 = #216; /* Part of FTE_HEXEN2*/
 void(vector org, float radius, float colour, float effect, float count) particle4 = #217; /* Part of FTE_HEXEN2*/
@@ -1171,9 +1163,7 @@ void(vector org, optional float count) te_bloodqw = #239; /* Part of FTE_TE_STAN
 void(entity ent) te_muzzleflash = #0:te_muzzleflash;
 float(vector viewpos, entity entity) checkpvs = #240; /* Part of FTE_QC_CHECKPVS*/
 entity(string match, optional float matchnum) matchclientname = #241; /* Part of FTE_QC_MATCHCLIENTNAME*/
-void(string destaddress, string content) sendpacket = #242; /* Part of FTE_QC_SENDPACKET
-		Sends a UDP packet to the specified destination. Note that the payload will be prefixed with four 255 bytes as a sort of security feature. */
-
+void(string destaddress, string content) sendpacket = #242; /* Part of FTE_QC_SENDPACKET*/
 float(float dividend, float divisor) mod = #245;
 float(optional string host, optional string user, optional string pass, optional string defaultdb, optional string driver) sqlconnect = #250; /* Part of FTE_SQL*/
 void(float serveridx) sqldisconnect = #251; /* Part of FTE_SQL*/
@@ -1208,10 +1198,6 @@ float(float modlindex, optional float useabstransforms) skel_create = #263; /* P
 		Allocates a new uninitiaised skeletal object, with enough bone info to animate the given model.
 		eg: self.skeletonobject = skel_create(self.modelindex); */
 
-float(float skel, entity ent, float modelindex, float retainfrac, float firstbone, float lastbone, optional float addfrac) skel_build = #264; /* Part of FTE_CSQC_SKELETONOBJECTS
-		Animation data (according to the entity's frame info) is pulled from the specified model and blended into the specified skeletal object.
-		If retainfrac is set to 0 on the first call and 1 on the others, you can blend multiple animations together according to the addfrac value. The final weight should be 1. Other values will result in scaling and/or other weirdness. You can use firstbone and lastbone to update only part of the skeletal object, to allow legs to animate separately from torso, use 0 for both arguments to specify all, as bones are 1-based. */
-
 typedef struct
 {
 	int sourcemodelindex; /*frame data will be imported from this model, bones must be compatible*/
@@ -1226,6 +1212,10 @@ typedef struct
 	float subblend[2];
 	float controllers[5];
 } skelblend_t;
+float(float skel, entity ent, float modelindex, float retainfrac, float firstbone, float lastbone, optional float addfrac) skel_build = #264; /* Part of FTE_CSQC_SKELETONOBJECTS
+		Animation data (according to the entity's frame info) is pulled from the specified model and blended into the specified skeletal object.
+		If retainfrac is set to 0 on the first call and 1 on the others, you can blend multiple animations together according to the addfrac value. The final weight should be 1. Other values will result in scaling and/or other weirdness. You can use firstbone and lastbone to update only part of the skeletal object, to allow legs to animate separately from torso, use 0 for both arguments to specify all, as bones are 1-based. */
+
 float(float skel, int numblends, skelblend_t *weights, int structsize) skel_build_ptr = #0:skel_build_ptr; /*
 		Like skel_build, but slightly simpler. */
 
@@ -1411,26 +1401,14 @@ void(string s, ...) print = #339; /* Part of DP_SV_PRINT
 void(entity ent) runstandardplayerphysics = #347; /*
 		Perform the engine's standard player movement prediction upon the given entity using the input_* globals to describe movement. */
 
-int(string keyname, optional void *outptr, int size) getlocalinfo = #0:getlocalinfo; /*
-		Obtains a copy of a data blob (with spaces) from the server's private localinfo. Will write up to size bytes and return the actual size. Does not null terminate (but memalloc(ret+1) will, if you want to cast the buffer to a string), and the blob may contain embedded nulls. Ignores all special keys, returning only what is actually there. */
-
-void(string keyname, optional void *outptr, int size) setlocalinfo = #0:setlocalinfo; /*
-		Changes the server's private localinfo. This data will be available for the following map, and will *usually* reload with saved games. */
-
 float(entity ent) wasfreed = #353; /*
 		Quickly check to see if the entity is currently free. This function is only valid during the two-second non-reuse window, after that it may give bad results. Try one second to make it more robust. */
 
 string(string key) serverkey = #354; /*
-		Look up a key in the server's public serverinfo string. If the key contains binary data then it will be truncated at the first null. */
+		Look up a key in the server's public serverinfo string */
 
 float(string key, optional float assumevalue) serverkeyfloat = #0:serverkeyfloat; /*
 		Version of serverkey that returns the value as a float (which avoids tempstrings). */
-
-int(string key, optional void *ptr, int maxsize) serverkeyblob = #0:serverkeyblob; /*
-		Version of serverkey that returns data as a blob (ie: binary data that may contain nulls). Returns the full blob size, even if truncated (pass maxsize=0 to query required storage). */
-
-void(string key, void *ptr, optional int size) setserverkey = #0:setserverkey; /*
-		Changes the server's serverinfo. */
 
 __variant*(int size) memalloc = #384; /* Part of FTE_MEMALLOC
 		Allocate an arbitary block of memory */
@@ -1528,8 +1506,8 @@ string(searchhandle handle, float num) search_getfilemtime = #0:search_getfilemt
 string(string cvarname) cvar_string = #448; /* Part of DP_QC_CVAR_STRING*/
 entity(entity start, .float fld, float match) findflags = #449; /* Part of DP_QC_FINDFLAGS*/
 entity(.float fld, float match, optional .entity chainfield) findchainflags = #450; /* Part of DP_QC_FINDCHAINFLAGS*/
-float(entity ent, string tagname) gettagindex = #451; /* Part of DP_QC_GETTAGINFO*/
-vector(entity ent, float tagindex) gettaginfo = #452; /* Part of DP_QC_GETTAGINFO
+float(entity ent, string tagname) gettagindex = #451; /* Part of DP_MD3_TAGSINFO*/
+vector(entity ent, float tagindex) gettaginfo = #452; /* Part of DP_MD3_TAGSINFO
 		Obtains the current worldspace position+orientation of the bone or tag from the given entity. The return value is the world coord, v_forward, v_right, v_up are also set according to the bone/tag's orientation. */
 
 void(entity player) dropclient = #453; /* Part of DP_SV_DROPCLIENT*/
@@ -1640,8 +1618,8 @@ float(string filename, strbuf bufhandle) buf_loadfile = #535; /*
 float(filestream filehandle, strbuf bufhandle, optional float startpos, optional float numstrings) buf_writefile = #536; /*
 		Writes the contents of a string buffer onto the end of the supplied filehandle (you must have already used fopen). Additional optional arguments permit you to constrain the writes to a subsection of the stringbuffer. */
 
-float(optional float forcestate) physics_supported = #0:physics_supported; /*
-		Queries whether rigid body physics is enabled or not. CSQC and SSQC may report different values. If the force argument is specified then the engine will try to activate or release physics (returning the new state, which may fail if plugins or dlls are missing). Note that restarting the physics engine is likely to result in hitches when collision trees get generated. The state may change if a plugin is disabled mid-map. */
+float(optional float force) physics_supported = #0:physics_supported; /*
+		Queries whether rigid body physics is enabled or not. CSQC and SSQC may report different values. If the force argument is used then the engine will try to activate or release physics (returning the new state, which may fail if plugins or dlls are missing). Note that restarting the physics engine is likely to result in hitches when collision trees get generated. The state may change if a plugin is disabled mid-map. */
 
 void(entity e, float physics_enabled) physics_enable = #540; /*
 		Enable or disable the physics attached to a MOVETYPE_PHYSICS entity. Entities which have been disabled in this way will stop taking so much cpu time. */
@@ -1668,20 +1646,10 @@ string(entity e) generateentitydata = #0:generateentitydata; /*
 		Dumps the entities fields into a string which can later be parsed with parseentitydata. */
 
 string(string dnsname, optional float defport) netaddress_resolve = #625;
-string(string fmt, ...) sprintf = #627; /* Part of DP_QC_SPRINTF
-		'prints' to a formatted temp-string. Mostly acts as in C, however %d assumes floats (fteqcc has arg checking. Use it.).
-		type conversions: l=arg is an int, h=arg is a float, and will work as a prefix for any float or int representation.
-		float representations: d=decimal, e,E=exponent-notation, f,F=floating-point notation, g,G=terse float, c=char code, x,X=hex
-		other representations: i=int, s=string, S=quoted and marked-up string, v=vector, p=pointer
-		so %ld will accept an int arg, while %hi will expect a float arg.
-		entities, fields, and functions will generally need to be printed as ints with %i. */
-
+string(string fmt, ...) sprintf = #627; /* Part of DP_QC_SPRINTF*/
 float(entity e, float s) getsurfacenumtriangles = #628;
 vector(entity e, float s, float n) getsurfacetriangle = #629;
 string(string digest, string data, ...) digest_hex = #639;
-string(string digest, void *data, int length) digest_ptr = #0:digest_ptr; /*
-		Calculates the digest of a single contiguous block of memory (including nulls) using the specified hash function. */
-
 #ifdef _ACCESSORS
 accessor strbuf : float
 {
@@ -1710,7 +1678,7 @@ accessor hashtable : float
 accessor infostring : string
 {
 	get string[string] = infoget;
-	inline set& string[string fld] = {this = infoadd(this, fld, value);};
+	inline seti& string[string fld] = {this = infoadd(this, fld, value);};
 };
 accessor filestream : float
 {
