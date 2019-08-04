@@ -10,6 +10,8 @@ map_list_item map_list[] =
 	{ "goo02", "Goo 2" },
 	{ "smap", "Snake" },
 	{ "sticky_tut", "Sticky" },
+	{ "forest", "Forest" },
+	{ "rocket_tut", "Target Practice" },
 	{ "goo01", "Goo 1" },
 	{ "goo03", "Goo 3" },
 	{ "climb", "Climb" },

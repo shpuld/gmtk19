@@ -1,0 +1,392 @@
+default
+{
+	castShadows 1
+	receiveShadows 1
+	sampleSize 16
+	longestCurve 0.000000
+}
+
+0 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+1 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+2 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+3 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+4 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+5 // SURFACE_PATCH V: 27 I: 0 
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+}
+
+6 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+7 // SURFACE_PATCH V: 27 I: 0 
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+}
+
+8 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+9 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+10 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+11 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+12 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+13 // SURFACE_PATCH V: 27 I: 0 
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+}
+
+14 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+15 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+16 // SURFACE_PATCH V: 27 I: 0 
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+}
+
+17 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+18 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+19 // SURFACE_PATCH V: 9 I: 0 planar
+{
+	shader textures/dev/wood
+	entity 3
+	longestCurve 1360.361572
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+20 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/greentrim
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+21 // SURFACE_META V: 3 I: 3 planar
+{
+	shader textures/dev/greentrim
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+22 // SURFACE_META V: 3 I: 3 planar
+{
+	shader textures/dev/greentrim
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+23 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/greentrim
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+24 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/trim
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+25 // SURFACE_META V: 20 I: 36 planar
+{
+	shader textures/dev/trim
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+26 // SURFACE_META V: 20 I: 36 planar
+{
+	shader textures/dev/trim
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+27 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/trim
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+28 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/trim
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+29 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/trim
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+30 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/trim
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+31 // SURFACE_META V: 8 I: 18 planar
+{
+	shader textures/dev/greenblock
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+32 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/greenblock
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+33 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/greenblock
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+34 // SURFACE_META V: 6 I: 12 planar
+{
+	shader textures/dev/greenblock
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+35 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/greenblock
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+36 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/greenblock
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+37 // SURFACE_META V: 10 I: 24 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+38 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+39 // SURFACE_META V: 10 I: 24 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+40 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+41 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+42 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+43 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+44 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+45 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+}
+
+46 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/wood
+	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+47 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+48 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+49 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+50 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+51 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+52 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/test_sky
+	sampleSize 0
+}
+
+53 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+54 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+55 // SURFACE_META V: 4 I: 6 
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+56 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+
+57 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/goal
+	sampleSize 0
+}
+

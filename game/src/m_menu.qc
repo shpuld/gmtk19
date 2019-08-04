@@ -318,7 +318,7 @@ tutorial tutorials[] = {
 	{ "start", "Welcome!", "Use MOUSE1 to shoot the goo,", "hold it to shoot it further.", "Collect diamonds and avoid", "falling off the level.", "Get to the GOAL after", "collecting all of them." },
 	{ "goo02", "Hotkeys", "You can use Z to undo your last", "move (strokes will still remain).", "You can use R to restart", "the stage and the strokes.", "You can reach better ranks", "with less strokes in total." },
 	{ "sticky_tut", "Glue Powerup", "There's the Glue Powerup!", "", "With the Glue Powerup,", "you will stick to walls.", "Glue is useful for", "avoiding falling off." },
-	{ "rocket_tut", "Rocket Powerup", "That's the Rocket Powerup!", "Rocket lets you charge", "more than normally,", "making it possible to", "reach far away places!" }
+	{ "rocket_tut", "Rocket Powerup", "That's the Rocket Powerup!", "", "Rocket lets you charge much", "more than normally.", "With it, it's possible to", "reach far away places!" }
 };
 
 void() m_close;
@@ -441,13 +441,13 @@ void() main_menu =
 	
 	if (cvar_string("mapname") != "menu")
 	{
-		my_button("mm_restart", [0, 8], [size_x - 16, 20], "Restart") ? start_stage("start") : 0;
+		my_button("mm_restart", [0, 8], [size_x - 16, 20], "Restart") ? localcmd("restart\n") : 0;
 		my_button("mm_start", [0, 8 + 24], [size_x - 16, 20], "New Game") ? current_menu = MENU_NEWGAME : 0;
 		my_button("mm_settings", [0, 8 + 24 + 24], [size_x - 16, 20], "Settings") ? current_menu = MENU_SETTINGS : 0;
 	}
 	else
 	{
-		my_button("mm_start", [0, 8], [size_x - 16, 20], "New Game") ? start_stage("start") : 0;
+		my_button("mm_start", [0, 8], [size_x - 16, 20], "New Game") ? current_menu = MENU_NEWGAME : 0;
 		my_button("mm_settings", [0, 8 + 24], [size_x - 16, 20], "Settings") ? current_menu = MENU_SETTINGS : 0;
 	}
 	
