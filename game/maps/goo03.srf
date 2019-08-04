@@ -56,20 +56,20 @@ default
 
 8 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/redtrim
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	shader textures/dev/yellowramp
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 9 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redtrim
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 10 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redtrim
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 11 // SURFACE_META V: 4 I: 6 planar
@@ -80,8 +80,8 @@ default
 
 12 // SURFACE_META V: 4 I: 6 planar
 {
-	shader textures/dev/redblock
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	shader textures/dev/redtrim
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 13 // SURFACE_META V: 4 I: 6 planar
@@ -90,82 +90,82 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-14 // SURFACE_META V: 9 I: 15 planar
+14 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-15 // SURFACE_META V: 6 I: 12 planar
+15 // SURFACE_META V: 9 I: 15 planar
+{
+	shader textures/dev/redblock
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+16 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-16 // SURFACE_META V: 4 I: 6 planar
+17 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-17 // SURFACE_META V: 10 I: 24 planar
+18 // SURFACE_META V: 10 I: 24 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-18 // SURFACE_META V: 6 I: 12 planar
+19 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-19 // SURFACE_META V: 8 I: 18 planar
+20 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-20 // SURFACE_META V: 6 I: 12 planar
+21 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-21 // SURFACE_META V: 8 I: 18 planar
+22 // SURFACE_META V: 8 I: 18 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-22 // SURFACE_META V: 6 I: 12 planar
+23 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-23 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/redblock
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 24 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redblock
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 25 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redblock
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 26 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redblock
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 27 // SURFACE_META V: 4 I: 6 planar
@@ -174,64 +174,64 @@ default
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-28 // SURFACE_META V: 9 I: 15 planar
+28 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/redblock
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-29 // SURFACE_META V: 21 I: 39 planar
+29 // SURFACE_META V: 9 I: 15 planar
+{
+	shader textures/dev/redblock
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+30 // SURFACE_META V: 21 I: 39 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-30 // SURFACE_META V: 42 I: 72 planar
+31 // SURFACE_META V: 42 I: 72 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-31 // SURFACE_META V: 24 I: 36 planar
+32 // SURFACE_META V: 24 I: 36 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-32 // SURFACE_META V: 9 I: 15 planar
+33 // SURFACE_META V: 9 I: 15 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-33 // SURFACE_META V: 4 I: 6 planar
+34 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-34 // SURFACE_META V: 36 I: 66 planar
+35 // SURFACE_META V: 36 I: 66 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-35 // SURFACE_META V: 4 I: 6 planar
+36 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-36 // SURFACE_META V: 6 I: 12 planar
+37 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-37 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bluetrim
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 38 // SURFACE_META V: 4 I: 6 planar
@@ -240,46 +240,46 @@ default
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-39 // SURFACE_META V: 9 I: 15 planar
+39 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bluetrim
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+40 // SURFACE_META V: 9 I: 15 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-40 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/bluetrim
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 41 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bluetrim
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+42 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/bluetrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-42 // SURFACE_META V: 21 I: 39 planar
+43 // SURFACE_META V: 21 I: 39 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-43 // SURFACE_META V: 4 I: 6 planar
+44 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bluetrim
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-44 // SURFACE_META V: 4 I: 6 planar
+45 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/sandblock
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
-}
-
-45 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/purplebrick
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 46 // SURFACE_META V: 4 I: 6 planar
@@ -294,58 +294,58 @@ default
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-48 // SURFACE_META V: 10 I: 18 planar
+48 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-49 // SURFACE_META V: 7 I: 15 planar
+49 // SURFACE_META V: 10 I: 18 planar
+{
+	shader textures/dev/purplebrick
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
+}
+
+50 // SURFACE_META V: 7 I: 15 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-50 // SURFACE_META V: 4 I: 6 planar
+51 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-51 // SURFACE_META V: 5 I: 9 planar
+52 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-52 // SURFACE_META V: 4 I: 6 planar
+53 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-53 // SURFACE_META V: 6 I: 12 planar
+54 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-54 // SURFACE_META V: 14 I: 24 planar
+55 // SURFACE_META V: 14 I: 24 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-55 // SURFACE_META V: 18 I: 42 planar
+56 // SURFACE_META V: 18 I: 42 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-56 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/purplebrick
-	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
 57 // SURFACE_META V: 4 I: 6 planar
@@ -354,16 +354,16 @@ default
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-58 // SURFACE_META V: 20 I: 36 planar
+58 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purplebrick
+	lightmapAxis ( 0.000000 0.000000 1.000000 )
+}
+
+59 // SURFACE_META V: 20 I: 36 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-59 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/purplebrick
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 60 // SURFACE_META V: 12 I: 42 planar
@@ -372,19 +372,19 @@ default
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-61 // SURFACE_META V: 6 I: 12 planar
+61 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purplebrick
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+62 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-62 // SURFACE_META V: 12 I: 24 planar
-{
-	shader textures/dev/purplebrick
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-63 // SURFACE_META V: 6 I: 12 planar
+63 // SURFACE_META V: 12 I: 24 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
@@ -393,91 +393,91 @@ default
 64 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-65 // SURFACE_META V: 8 I: 12 planar
+65 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-66 // SURFACE_META V: 6 I: 12 planar
+66 // SURFACE_META V: 8 I: 12 planar
+{
+	shader textures/dev/purplebrick
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
+}
+
+67 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-67 // SURFACE_META V: 10 I: 18 planar
+68 // SURFACE_META V: 10 I: 18 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-68 // SURFACE_META V: 6 I: 12 planar
+69 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-69 // SURFACE_META V: 7 I: 15 planar
+70 // SURFACE_META V: 7 I: 15 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
-70 // SURFACE_META V: 8 I: 12 planar
+71 // SURFACE_META V: 8 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-71 // SURFACE_META V: 4 I: 6 planar
+72 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
-72 // SURFACE_META V: 5 I: 9 planar
+73 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
 }
 
-73 // SURFACE_META V: 4 I: 6 planar
+74 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-74 // SURFACE_META V: 6 I: 12 planar
+75 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-75 // SURFACE_META V: 4 I: 6 planar
+76 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-76 // SURFACE_META V: 11 I: 21 planar
+77 // SURFACE_META V: 11 I: 21 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
-}
-
-77 // SURFACE_META V: 4 I: 6 planar
-{
-	shader textures/dev/purplebrick
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 78 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 79 // SURFACE_META V: 4 I: 6 planar
@@ -489,22 +489,22 @@ default
 80 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
+}
+
+81 // SURFACE_META V: 4 I: 6 planar
+{
+	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 0.000000 1.000000 )
 }
 
-81 // SURFACE_META V: 6 I: 12 planar
+82 // SURFACE_META V: 6 I: 12 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
-82 // SURFACE_META V: 5 I: 9 planar
-{
-	shader textures/dev/purplebrick
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
-}
-
-83 // SURFACE_META V: 4 I: 6 planar
+83 // SURFACE_META V: 5 I: 9 planar
 {
 	shader textures/dev/purplebrick
 	lightmapAxis ( 0.000000 -1.000000 0.000000 )
@@ -543,13 +543,13 @@ default
 89 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
-	lightmapAxis ( -1.000000 0.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
 90 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/purplebrick
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( -1.000000 0.000000 0.000000 )
 }
 
 91 // SURFACE_META V: 4 I: 6 planar
@@ -714,16 +714,16 @@ default
 	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
-118 // SURFACE_META V: 20 I: 42 planar
-{
-	shader textures/dev/bluecliff
-	lightmapAxis ( 1.000000 0.000000 0.000000 )
-}
-
-119 // SURFACE_META V: 4 I: 6 planar
+118 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/bluecliff
 	lightmapAxis ( 0.000000 0.000000 -1.000000 )
+}
+
+119 // SURFACE_META V: 20 I: 42 planar
+{
+	shader textures/dev/bluecliff
+	lightmapAxis ( 1.000000 0.000000 0.000000 )
 }
 
 120 // SURFACE_META V: 4 I: 6 planar
@@ -969,12 +969,12 @@ default
 160 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/window
-	lightmapAxis ( 0.000000 -1.000000 0.000000 )
+	lightmapAxis ( 0.000000 1.000000 0.000000 )
 }
 
 161 // SURFACE_META V: 4 I: 6 planar
 {
 	shader textures/dev/window
-	lightmapAxis ( 0.000000 1.000000 0.000000 )
+	lightmapAxis ( 0.000000 -1.000000 0.000000 )
 }
 
