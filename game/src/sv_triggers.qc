@@ -130,6 +130,7 @@ void() glue_touch =
 	self.modelindex = 0;
 	sound(other, CHAN_AUTO, "sounds/diamondpickup2.wav", 0.5, 0, 50);
 	other.sticky_jumps = MAX_GLUE;
+	other.jump_flags |= JF_STICKY;
 };
 
 void() item_haste =

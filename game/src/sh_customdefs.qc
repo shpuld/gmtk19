@@ -80,9 +80,9 @@ void(entity pl, float length) custom_physics =
 	setorigin(pl, trace_endpos);
 	if (trace_fraction < 1)
 	{
-		if (vlen(pl.velocity) > 200)
+		if (vlen(pl.velocity) > 10*60*length)
 		{
-			handlebounce(vlen(pl.velocity), pl);
+			handlebounce(vlen(pl.velocity)*60*length, pl);
 		}
 		pl.velocity = vector_bounce(pl.velocity, trace_plane_normal);
 		pl.velocity *= 0.8;

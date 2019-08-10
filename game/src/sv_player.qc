@@ -184,8 +184,11 @@ void(string command_string) SV_ParseClientCommand =
 
 void(float speed, entity blob) handlebounce =
 {
-	float vol = min(1, ((speed - 200) * 0.001));
-	sound(world, CHAN_AUTO, "sounds/splatbig1.wav", vol, 0, 100);
+	if (speed > 200)
+	{
+		float vol = min(1, ((speed - 200) * 0.001));
+		sound(world, CHAN_AUTO, "sounds/splatbig1.wav", vol, 0, 100);
+	}
 	
 	// printf("hit: %x, sky? %i\n", trace_surfaceflagsi, trace_surfaceflagsi & 4); //q3surf sky?
 	if (trace_surfaceflagsi & Q3SURF_SKY) player_die(blob);
@@ -198,8 +201,13 @@ void(float speed, entity blob) handlebounce =
 		self.sticking_to = blob.origin;
 		self.velocity = '0 0 0';
 		// infinite powerups, self.sticky_jumps -= 1;
-		self.jump_flags -= self.jump_flags & JF_STICKY;
-	}	
+		// self.jump_flags -= self.jump_flags & JF_STICKY;
+	}
+	else if (self.sticky_jumps > 0)
+	{
+		// This makes sure to set sticky after breaking a wall but not sticking to the now-broken wall
+		self.jump_flags |= JF_STICKY;
+	}
 	if (self.rocket_jumps > 0 && self.jump_flags & JF_ROCKET)
 	{
 		// massive dampening to make rocket jumps more controllable
